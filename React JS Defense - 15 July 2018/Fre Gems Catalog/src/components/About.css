@@ -1,0 +1,16 @@
+.about {
+    background: #a2b192;
+    padding: 20px;
+    margin: 10px;
+    height: 1200px;
+  }
+
+  .fontAbout {
+    background: rgb(192, 190, 190);
+    margin: 400px;
+    margin-top: 50px;
+    padding: 20px;
+    overflow: auto;
+    height: 500px;
+    border: 5px solid rgb(145, 89, 89);
+}

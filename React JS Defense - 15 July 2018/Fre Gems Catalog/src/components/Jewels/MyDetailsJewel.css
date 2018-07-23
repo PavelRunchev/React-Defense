@@ -1,0 +1,28 @@
+.detailsJewel {
+    background: #a2b192;
+    padding: 100px;
+    margin: 10px;
+ 
+}
+
+.detailsLoading {
+    background: #a2b192;
+    padding: 20px; 
+    margin: 10px;
+    height: 1000px;
+}
+
+.controls > button {
+    background: rgb(145, 89, 89);
+}
+
+.detailsJ {
+    display: inline-block;
+    border: 5px solid rgb(145, 89, 89);
+    padding: 5em 5em;
+    background-color: rgb(192, 190, 190);
+    margin: 5em 5em;
+    text-align: center;
+    width: 20%;
+}
+

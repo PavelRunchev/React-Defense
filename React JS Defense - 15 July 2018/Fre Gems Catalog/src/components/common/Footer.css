@@ -1,0 +1,14 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(145, 89, 89);
+    color: black;
+    text-align: center;
+}
+
+.App-timer {
+    float: left;
+}

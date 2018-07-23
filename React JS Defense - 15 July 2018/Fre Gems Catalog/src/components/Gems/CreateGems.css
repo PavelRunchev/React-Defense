@@ -1,0 +1,36 @@
+.createGem {
+
+    background: #a2b192;
+    margin: 20px;
+    padding: 20px;
+    overflow: auto;
+    height: 1180px;
+}
+
+.form>* {
+    display: block;
+    width: 400px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.form>label {
+    margin-top: 10px;
+}
+
+.form>textarea {
+    resize: none;
+    height: 9em;
+}
+
+.form>input[type="submit"] {
+    margin: auto;
+    width: 100px;
+    background: rgb(145, 89, 89);
+}
+
+.form>input[type="submit"]:hover {
+  background: grey;
+  cursor: pointer;
+  text-align: center;
+}
