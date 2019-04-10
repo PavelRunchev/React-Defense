@@ -1,0 +1,13 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+#no-find-page {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2%;
+    & > h2 { @include h2; }
+    & .inner-no-page {
+        padding: 3%;
+    }
+}

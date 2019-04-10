@@ -1,0 +1,59 @@
+
+@import '../../../sass//mixins.scss';
+@import '../../../sass/animations.scss';
+
+#software-technology {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2%;
+    & > h2 { font-weight: bold; color: #158CBA; text-shadow: 1px 1px rgb(0,0,0); }
+
+    & > .inner-software-technology {
+        @include inner-template;
+        width: 80%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > .box {
+            height: 15rem;
+            width: 30rem;
+            padding: 2% 0% 2% 10%;
+
+            & > div {
+                text-align: left;
+                opacity: 0;
+                animation: visible-technology 2s 0.5s linear forwards;
+            
+                & > span { 
+                    font-weight: bold; 
+                    text-align: left;
+                    font-size: 30px;
+                    color: #158CBA;
+                    text-shadow: 1px 1px rgb(0,0,0); 
+                    padding-bottom: 10px;
+                }
+
+                & > .react,
+                & > .html5,
+                & > .sass,
+                & > .bootstrap {  
+                    margin-right: 1.5rem; 
+                    padding-top: 10px;
+                    font-size: 40px;
+                }
+    
+                & > .react { color: #5ED4F4;}
+                & > .html5 { color: #E76234; }
+                & > .sass { color: #CD6799; }
+                & > .bootstrap { color: #563B7E; }
+            }
+
+            @for $i from 2 through 4 {
+                & div:nth-child(#{$i}) { animation-delay: $i * 1.5s; }
+            }
+        }
+    }
+}

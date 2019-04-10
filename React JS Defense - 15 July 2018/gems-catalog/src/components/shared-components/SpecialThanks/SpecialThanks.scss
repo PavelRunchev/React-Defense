@@ -1,0 +1,49 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+#special-thanks {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2%;
+    & > h2 { @include h2; }
+
+    & > .inner-special-thanks {
+        @include inner-template;
+        width: 80%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > .box {
+            height: 15rem;
+            width: 30rem;
+            & > P {
+                font-weight: bold;
+                font-size: 26px;
+                color: #555;
+                text-shadow: 1px 1px rgb(255,255,255); 
+                opacity: 0;
+                animation: slipRight 4s 0.1s linear forwards;
+
+                & > span { 
+                    font-style: italic; 
+                    font-size: 30px;
+                    color: #158CBA;
+                    text-shadow: 1px 1px rgb(0,0,0); 
+                }
+            }
+
+            p:nth-child(1),
+            p:nth-child(3) { animation: slipRight 3.5s linear forwards; }
+
+            p:nth-child(2),
+            p:nth-child(4) { animation: slipLeft 3.5s linear forwards; }
+
+            @for $i from 1 through 4 {
+                & p:nth-child(#{$i}) { animation-delay: $i * 1.5s; }
+            }
+        }
+    }
+}
