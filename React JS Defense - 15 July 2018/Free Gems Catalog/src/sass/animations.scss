@@ -54,3 +54,115 @@
     75% { opacity: 0.75; transform: translateX(75px); }
     100% { opacity: 1; transform: translateX(0px); }
 }
+
+
+
+
+//Contact Sesion animation
+@keyframes ownerAnimation {
+    0% { transform: translateY(625px); opacity: 0; }
+    20% { transform: translateY(500px); opacity: 1; }
+    40% { transform: translateY(375px); opacity: 1; }
+    60% { transform: translateY(250px); opacity: 1; }
+    80% { transform: translateY(125px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 0; }
+}
+
+@keyframes ownerNameAnimation {
+    0% { transform: translateY(575px); opacity: 0; }
+    20% { transform: translateY(450px); opacity: 1; }
+    40% { transform: translateY(325px); opacity: 1; }
+    60% { transform: translateY(200px); opacity: 1; }
+    80% { transform: translateY(75px); opacity: 1; }
+    100% { transform: translateY(-50px); opacity: 0; }
+}
+
+@keyframes ownerEmailAnimation {
+    0% { transform: translateY(525px); opacity: 0; }
+    20% { transform: translateY(400px); opacity: 1; }
+    40% { transform: translateY(275px); opacity: 1; }
+    60% { transform: translateY(150px); opacity: 1; }
+    80% { transform: translateY(25px); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+@keyframes ownerPhoneAnimation {
+    0% { transform: translateY(475px); opacity: 0; }
+    20% { transform: translateY(350px); opacity: 1; }
+    40% { transform: translateY(225px); opacity: 1; }
+    60% { transform: translateY(100px); opacity: 1; }
+    80% { transform: translateY(-25px); opacity: 1; }
+    100% { transform: translateY(-150px); opacity: 0; }
+}
+
+@keyframes adminAnimation {
+    0% { transform: translateY(425px); opacity: 0; }
+    20% { transform: translateY(300px); opacity: 1; }
+    40% { transform: translateY(175px); opacity: 1; }
+    60% { transform: translateY(50px); opacity: 1; }
+    80% { transform: translateY(-75px); opacity: 1; }
+    100% { transform: translateY(-200px); opacity: 0; }
+}
+
+@keyframes adminNameAnimation {
+    0% { transform: translateY(375px); opacity: 0; }
+    20% { transform: translateY(250px); opacity: 1; }
+    40% { transform: translateY(125px); opacity: 1; }
+    60% { transform: translateY(0px); opacity: 1; }
+    80% { transform: translateY(-125px); opacity: 1; }
+    100% { transform: translateY(-250px); opacity: 0; }
+}
+
+@keyframes adminEmailAnimation {
+    0% { transform: translateY(325px); opacity: 0; }
+    20% { transform: translateY(200px); opacity: 1; }
+    40% { transform: translateY(75px); opacity: 1; }
+    60% { transform: translateY(-50px); opacity: 1; }
+    80% { transform: translateY(-175px); opacity: 1; }
+    100% { transform: translateY(-300px); opacity: 0; }
+}
+
+@keyframes adminPhoneAnimation {
+    0% { transform: translateY(275px); opacity: 0; }
+    20% { transform: translateY(150px); opacity: 1; }
+    40% { transform: translateY(25px); opacity: 1; }
+    60% { transform: translateY(-100px); opacity: 1; }
+    80% { transform: translateY(-225px); opacity: 1; }
+    100% { transform: translateY(-350px); opacity: 0; }
+}
+
+@keyframes developmentSoftUniAnimation {
+    0% { transform: translateY(225px); opacity: 0; }
+    20% { transform: translateY(100px); opacity: 1; }
+    40% { transform: translateY(-25px); opacity: 1; }
+    60% { transform: translateY(-150px); opacity: 1; }
+    80% { transform: translateY(-275px); opacity: 1; }
+    100% { transform: translateY(-400px); opacity: 0; }
+}
+
+@keyframes softUniLogoAnimation {
+    0% { transform: translateY(175px); opacity: 0; }
+    20% { transform: translateY(50px); opacity: 0; }
+    40% { transform: translateY(-75px); opacity: 1; }
+    60% { transform: translateY(-200px); opacity: 1; }
+    80% { transform: translateY(-325px); opacity: 1; }
+    100% { transform: translateY(-450px); opacity: 0; }
+}
+
+@keyframes developerAnimation {
+    0% { transform: translateY(50px); opacity: 0; }
+    20% { transform: translateY(-75px); opacity: 1; }
+    40% { transform: translateY(-200px); opacity: 1; }
+    60% { transform: translateY(-325px); opacity: 1; }
+    80% { transform: translateY(-450px); opacity: 1; }
+    100% { transform: translateY(-575px); opacity: 0; }
+}
+
+@keyframes developerLogoAnimation {
+    0% { transform: translateY(0px); opacity: 0; }
+    20% { transform: translateY(-125px); opacity: 0; }
+    40% { transform: translateY(-250px); opacity: 1; }
+    60% { transform: translateY(-375px); opacity: 1; }
+    80% { transform: translateY(-500px); opacity: 1; }
+    100% { transform: translateY(-625px); opacity: 0; }
+}

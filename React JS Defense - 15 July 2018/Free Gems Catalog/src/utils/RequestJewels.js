@@ -1,22 +1,22 @@
 const AppKey = 'kid_BkztNzfX7';
 const HostUrl = 'https://baas.kinvey.com';
 
-let RequestGems = {
-    createGem: (newGem) => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems`, {
+let RequestJewels = {
+    createJewel: (newJewel) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry`, {
             method: 'POST',
             headers: {
                 Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newGem)
+            body: JSON.stringify(newJewel)
         }).then(res => {
             return res.json();
         });
     },
 
-    allGems: () => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems?query={}&sort={"_kmd.ect": -1}`, {
+    allJewels: () => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry?query={}&sort={"_kmd.ect": -1}`, {
             method: 'GET',
             headers: {
                 Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
@@ -26,8 +26,8 @@ let RequestGems = {
         });
     },
 
-    searchGems: (name) => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems?query={"name":"${name}"}&sort={"_kmd.ect": -1}`, {
+    getJewelById: (id) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry/${id}`, {
             method: 'GET',
             headers: {
                 Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
@@ -37,19 +37,21 @@ let RequestGems = {
         });
     },
 
-    detailsGem: (id) => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems/${id}`, {
-            method: 'GET',
+    editJewel: (id, jewel) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry/${id}`, {
+            method: 'PUT',
             headers: {
-                Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
-            }
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jewel)
         }).then(res => {
             return res.json();
         });
     },
 
-    deleteGem: (id) => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems/${id}`, {
+    removeJewel: (id) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry/${id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
@@ -59,18 +61,17 @@ let RequestGems = {
         });
     },
 
-    editGem: (id, gem) => {
-        return fetch(`${HostUrl}/appdata/${AppKey}/gems/${id}`, {
-            method: 'PUT',
+    // get jewel with type (for upgrade)
+    getJewelForUpgrade: (curType) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/jewelry?query={"type":"${curType}"}&sort={"_kmd.ect": -1}`, {
+            method: 'GET',
             headers: {
-                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(gem)
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
+            }
         }).then(res => {
             return res.json();
         });
     },
 };
 
-export default RequestGems;
+export default RequestJewels;

@@ -17,7 +17,7 @@ class Dropdown extends Component {
 
                         <ul className="nested-navlink-gems">
                             <li>
-                                {loggedUser && <NavLink to="/allGems">Gems List</NavLink>}
+                                {loggedUser && <NavLink to="/gems/allGems">Gems List</NavLink>}
                                 {isAdmin && loggedUser && <NavLink to="/createGem">Create Gem</NavLink>}
                             </li>
                         </ul>
@@ -27,14 +27,14 @@ class Dropdown extends Component {
                         </NavLink>}
                         <ul className="nested-navlink-jewels">
                             <li>
-                                {loggedUser && <NavLink to="/allJewels">Jewels List</NavLink>}
+                                {loggedUser && <NavLink to="/publicJewels/allPublicJewels">Public Jewels</NavLink>}
                                 {isAdmin && loggedUser && <NavLink to="/createJewel">Create Jewel</NavLink>}
-                                {isAdmin && loggedUser && <NavLink to="/editOfJewels">Edit Jewels</NavLink>}
+                                {isAdmin && loggedUser && <NavLink to="/allJewels/listFromJewels">All Jewels</NavLink>}
                             </li>                        
                         </ul>
                     </li>
                     <li>
-                        {loggedUser && <NavLink to="/myRoom/privateRoomSection/">My Room</NavLink>}
+                        {loggedUser && <NavLink to="/myRoom/privateRoomSection">My Room</NavLink>}
                     </li>           
                 </ul>
             </li>

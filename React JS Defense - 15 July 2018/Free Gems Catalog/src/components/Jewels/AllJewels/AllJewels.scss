@@ -1,0 +1,7 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+#allJewels {
+    padding: 2%;
+    & > h2 { @include h2; }
+}

@@ -1,0 +1,7 @@
+@import '../../sass/mixins';
+@import '../../sass/animations';
+
+#myRoom {
+    padding: 2%;
+    & > h2 { @include h2; }
+}

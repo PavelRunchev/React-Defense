@@ -1,0 +1,36 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+#contacts {
+    background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),
+    url('../../../image/jewelry-contact-background.jpg');
+    background-size: 100% 110%;
+
+    padding: 4%;
+    height: 83vh;
+    & > h2 { font-weight: bold; color: #fff; text-shadow: 1px 1px rgb(0,0,0); }
+
+    & > .inner-contacts {
+        & > #owner { @include contact; animation: ownerAnimation 10s 0.1s linear forwards; }
+        & > #owner-name { @include contact; animation: ownerNameAnimation 10s 3s linear forwards; }
+        & > #owner-email { @include contact; animation: ownerEmailAnimation 10s 6s linear forwards; }
+        & > #owner-phone { @include contact; animation: ownerPhoneAnimation 10s 9s linear forwards; }
+        & > #admin { @include contact; animation: adminAnimation 10s 12s linear forwards; }
+        & > #admin-name { @include contact; animation: adminNameAnimation 10s 15s linear forwards; }
+        & > #admin-email { @include contact; animation: adminEmailAnimation 10s 18s linear forwards; }
+        & > #admin-phone { @include contact; animation: adminPhoneAnimation 10s 21s linear forwards; }
+        & > #development-softuni { @include contact; animation: developmentSoftUniAnimation 10s 24s linear forwards; }
+        & > #softuni-logo {
+            opacity: 0;
+            & > img { @include contact-logo; } 
+            animation: softUniLogoAnimation 10s 27s linear forwards; 
+        }
+
+        & > #developer { @include contact; animation: developerAnimation 10s 30s linear forwards; }
+        & > #developer-logo {
+            opacity: 0;
+            & > img { @include contact-logo; } 
+            animation: developerLogoAnimation 10s 33s linear forwards; 
+        }
+    }
+}
