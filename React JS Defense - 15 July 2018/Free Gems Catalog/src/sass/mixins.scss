@@ -1,0 +1,58 @@
+
+@mixin h2 {
+    font-weight: bold; 
+    color: #158CBA; 
+    margin: 2% 0; 
+    text-shadow: 1px 1px rgb(0,0,0);
+}
+
+@mixin anchor {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: $mainWidth;
+    position: relative;
+    text-decoration: none;  
+    border: none;            
+    background: #CFE7F1;
+    border: 2px solid #CFE7F1;
+    color: rgb(21,140,186);
+    font-size: 18px;
+    border-radius: 0.5rem;
+    z-index: 100;
+    &:hover {
+        background: rgb(21,140,186);
+        color: #CFE7F1;
+    }
+}
+
+@mixin inner-template {
+    background: rgba(21,140,186, 0.7);
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 12%, rgba(21,140,186,0.8) 65%);
+    margin: 3% auto;
+    padding: 2%;
+    border: 2px solid rgba(21,140,186,1);
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+
+//Contacts Section
+@mixin contact {
+    opacity: 0;
+    font-size: 22px;
+    margin: 1%;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff; 
+    text-shadow: 1px 1px rgb(0,0,0);
+    & > span { font-style: normal; font-weight: normal; }
+}
+
+@mixin contact-logo {
+    width: 8rem; 
+    border-radius: 0.4rem;
+    border: 1px solid #fff;
+    padding: 2px;
+}

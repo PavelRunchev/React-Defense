@@ -1,0 +1,98 @@
+@import '../../../sass/mixins.scss';
+@import '../../../sass/animations.scss';
+
+#home {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2% 2% 5% 2%;
+    & > h2 { @include h2; }
+
+    & > h3 {
+        padding-bottom: 3%; 
+        font-weight: bold;
+        color: rgb(21,140,186);
+    }
+
+    & > .inner-home {
+        display: flex;
+        justify-content: space-around;
+        & > article {
+            background: rgba(21,140,186, 0.7);
+            width: 40%;
+            border: 1px solid rgb(21,140,186);
+            border-radius: 0.2rem;
+            padding: 3%;
+            -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+            & > h3 { color: #fff; font-weight: bold; text-shadow: 1px 1px rgb(0,0,0); }
+
+            & img { 
+                width:40%; 
+                height: 250px;
+                padding: 5px;
+                border: 1px solid rgb(21,140,186);
+                border-radius: 0.3rem;
+                float: left;
+                margin: 0 4% 2% 0;
+                -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+            }
+
+            & > p {
+                font-size: 18px;
+                text-align: left;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    #home {
+        & > .inner-home {
+            flex-direction: column;
+            & > article {
+                width: 90%;
+                margin: 3% auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 681px) {
+    #home {
+        & > .inner-home {
+            & > article {
+                width: 97%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #home {
+        & > .inner-home {
+            & > article {
+                width: 97%;
+                & > img {
+                    float: none;
+                    width: 100%;
+                    margin: 2% 0;
+                }
+
+                & > p { font-size: 14px; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #home {
+       & > h2 { font-size: 20px; }
+       & > h3 { font-size: 20px; }
+    }
+}
