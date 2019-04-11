@@ -1,0 +1,76 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+.inner-allGems {
+    @include inner-template;
+    width: 90%;
+    margin: 1% auto;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    padding: 2%;
+    border: 2px solid rgb(21,140,186);
+    border-radius: 0.5rem;
+
+
+    & > .gems {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & > #page-numbers {
+        width: 15rem;
+        margin: 2% auto;
+        & > ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 5rem;
+
+            & > li {
+                cursor: pointer;
+                user-select: none;
+                margin: 0 1rem;
+                & > a {
+                    &:hover { background: rgb(21,140,186);}
+                }
+            }        
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .inner-allGems { width: 95%; }
+}
+
+@media screen and (max-width: 1200px) {
+    .inner-allGems {
+        & > .gems {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .inner-allGems {
+        & > .gems {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+        }    
+
+        & > #page-numbers { 
+            width: 100%; 
+            & > ul {
+                margin: 0;
+                flex-wrap: wrap;
+                & > li {
+                    margin: 2%;
+                }
+            }
+        }           
+    }
+}

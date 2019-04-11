@@ -15,6 +15,19 @@
     100% { transform: rotateY(0deg); }
 }
 
+//Gem model
+@keyframes button-view {
+    0% { opacity: 0; transform: translate(0px, 0px); }
+    50% { opacity: 0.5; transform: translate(0px, 100px); }
+    100% { opacity: 1; transform: translate(0px, 200px); }
+}
+
+//Gem model
+@keyframes image-View {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
 @keyframes linksHoverRotate {
     0% {  }
     100% { transform: perspective(10rem) rotateX(30deg); }

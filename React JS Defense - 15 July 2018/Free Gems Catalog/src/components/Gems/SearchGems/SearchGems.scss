@@ -1,0 +1,70 @@
+.searchGems {
+    width: 25rem;
+    margin: 0 auto;
+    margin-bottom: 2%;
+
+    & > form {
+        & > input {
+            background: none;
+            outline: none;
+            padding: 0.3rem 0 0.3rem 1rem;
+            border: 2px solid #fff;
+            border-bottom-left-radius: 0.3rem;
+            border-top-left-radius: 0.3rem;
+            &::-webkit-input-placeholder { color: #fff; }
+
+            &:focus {
+                -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+            }
+
+             //focus placeholder for Chrome
+             &:focus,
+             &:focus::-webkit-input-placeholder { border-color: #158CBA; color: #158CBA; }
+
+             //focus placeholder for FireFox 19+
+             &:focus,
+             &:focus::-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+
+             //focus placeholder for FireFox 18-
+             &:focus,
+             &:focus:-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+
+             //focus placeholder for Internet Explorer
+             &:focus,
+             &:focus:-ms-input-placeholder { border-color: #158CBA; color: #158CBA; }
+        }
+
+        & > button {
+            cursor: pointer;
+            //border: 2px solid rgb(21,140,186);
+            outline: none;
+            border: none;
+            color: #fff;
+            background: rgb(21,140,186);
+            border: 2px solid rgb(21,140,186);
+            font-weight: bold;
+            padding: 0.3rem 1rem;
+            border-bottom-right-radius: 0.3rem;
+            border-top-right-radius: 0.3rem;
+            &:hover {
+                background: #fff;
+                color: rgb(21,140,186);
+                border-color: rgb(21,140,186);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .searchGems { width: 100%; }
+}
+
+@media screen and (max-width: 280px) {
+    .searchGems {
+        & > form > input {
+            width: 100%;
+        }
+    }
+}

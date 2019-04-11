@@ -1,0 +1,67 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+
+
+#gem {
+    cursor: pointer;
+    width: 18rem;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    &:hover { 
+        transform: scale(1.05); 
+        -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+        -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+        box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+    }
+
+    & > .gem-index,
+    & > .gem-name,
+    & > .gem-create-time { 
+        width: 100%; 
+        margin: 0 auto; 
+        font-size: 18px; 
+        font-weight: bold; 
+        background: #fff; 
+    }
+
+    & > img { 
+        width: 100%; 
+        height: 300px;
+        opacity: 0;
+        animation: image-View 2s 0.3s linear forwards;
+    }
+
+    & > .gem-view {
+        background: rgba(255,255,255,0.8);
+        padding: 1.5rem 0;
+        & > a { 
+            cursor: pointer;
+            text-decoration: none; 
+            padding: 0.5rem 1.3rem;
+            border-radius: 0.5rem;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgb(21,140,186);
+            border: 1px solid #fff;
+            color: #fff;
+            &:hover { 
+                background: #fff; 
+                color: rgb(21,140,186); 
+                border: 1px solid rgb(21,140,186); 
+            }       
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #gem { margin: 3% auto; }
+}
+
+@media screen and (max-width: 400px) {
+    #gem { width: 98%; }
+}

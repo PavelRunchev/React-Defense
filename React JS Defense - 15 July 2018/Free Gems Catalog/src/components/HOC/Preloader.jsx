@@ -16,10 +16,10 @@ export default function Preloader(WrappedComponent) {
             };
         }
 
-        componentDidMount() {
-            if(this.props.match.url === '/gems/allGems') {
-                RequestGems.allGems()
-                    .then(data => this.setState({ ready: true, data }));
+        async componentDidMount() {
+            if(this.props.url === '/gems/allGems') {
+                const data = await RequestGems.allGems();
+                this.setState({ ready: true, data: data });
                 console.log(this.state.data);
             } else if(this.props.match.url === '/publicJewels/allPublicJewels') {
                 RequestPubliBaecJewels.allPublicJewels()
