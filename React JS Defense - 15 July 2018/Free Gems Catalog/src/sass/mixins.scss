@@ -38,6 +38,46 @@
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
 }
 
+@mixin model {
+    background: #fff;
+    cursor: pointer;
+    width: 21%;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    &:hover { 
+        transform: scale(1.05); 
+        -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+        -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+        box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+    }
+}
+
+
+@mixin pagination {
+    width: 30%;
+    margin: 2% auto;
+    & > ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 5rem;
+
+        & > li {
+            cursor: pointer;
+            user-select: none;
+            margin: 0 0.7rem;
+            & > a {
+                &:hover { background: rgb(21,140,186); color: #fff; }
+            }
+        }        
+    }
+}
+
 //Contacts Section
 @mixin contact {
     opacity: 0;

@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import './JewelsListSection.scss';
 import { withRouter } from 'react-router-dom';
-import Preloader from '../../HOC/Preloader';
+import JewelsList from './JewelsList';
+import Loading from '../../Loading/Loading';
 
-class AllJewelsBase extends Component {
-    
+class AllJewels extends Component {
     render () {
-        console.log(this.props.data);
         return (
-            <div className="container-fluid" id="allJewels">
+            <div className="container-fluid" id="JewelsSection">
                 <h2>Jewels Section</h2>
+                {this.props.data !== undefined ? 
+                    <Loading/> : 
+                    <JewelsList url={this.props.match.url}/>
+                }
             </div>
         );
     }
 }
-
-const AllJewels = Preloader(AllJewelsBase);
 
 export default withRouter(AllJewels);

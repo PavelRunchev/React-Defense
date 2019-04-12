@@ -1,10 +1,86 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#allGems{
-    background-image: url('../../../image/gemstone-crystal.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 1%;
-    & > h2 { @include h2; }
+.inner-gems {
+    @include inner-template;
+    width: 90%;
+    margin: 1% auto;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    padding: 2%;
+    border: 2px solid rgb(21,140,186);
+    border-radius: 0.5rem;
+
+    & > .gems {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & > #page-numbers {
+        width: 15rem;
+        margin: 2% auto;
+        & > ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 5rem;
+
+            & > li {
+                cursor: pointer;
+                user-select: none;
+                margin: 0 1rem;
+                & > a {
+                    &:hover { background: rgb(21,140,186);}
+                }
+            }        
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .inner-gems { width: 95%; }
+}
+
+@media screen and (max-width: 890px) {
+    .inner-gems {
+        & > .gems {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+        }    
+
+        & > #page-numbers { 
+            width: 50%; 
+            & > ul {
+                margin: 0;
+                & > li {
+                    margin: 2%;
+                }
+            }
+        }           
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .inner-gems { & > #page-numbers { width: 20%; } }
+}
+
+@media screen and (max-width: 350px) {
+    .inner-gems { 
+        & > #page-numbers { 
+            width: 10%; 
+            margin: 2% auto;
+            & > ul { 
+                flex-direction: column; 
+                & > li {
+                    margin: 10% auto;
+                    & > a { padding: 0.7rem; }
+                }
+            }
+        } 
+    }
 }

@@ -14,10 +14,10 @@ import NoFindPage from './components/shared-components/NoFindingPage/NoFindingPa
 const GemsListSection = React.lazy(() => import('./components/Gems/GemsListSection/GemsListSection'));
 
 //Public Jewels Component
-const AllPublicJewels = React.lazy(() => import('./components/PublicJewels/AllPublicJewels/AllPublicJewels.jsx'));
+const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
 
 //Jewels Component
-const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection.jsx'));
+const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection'));
 
 //MyRoom Component
 const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom.jsx'));
@@ -37,7 +37,7 @@ const AppRouter = () => (
 
             <Route exact path="/gems/allGems" render={() => auth.isLogged() ? <GemsListSection/> : <Home/>}/>
 
-            <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <AllPublicJewels/> : <Home/>}/>
+            <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
 
             <Route exact path="/allJewels/listFromJewels" render={() => auth.isLogged() ? <JewelsListSection/> : <Home/>}/>
 

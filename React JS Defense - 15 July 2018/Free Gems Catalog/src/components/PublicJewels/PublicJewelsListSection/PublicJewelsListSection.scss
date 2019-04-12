@@ -1,11 +1,10 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#gemsSection {
+#publicJewels {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 1%;
+    padding: 2%;
     & > h2 { @include h2; }
 }
-

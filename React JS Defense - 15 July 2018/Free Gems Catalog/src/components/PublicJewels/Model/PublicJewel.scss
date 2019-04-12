@@ -1,0 +1,46 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+.publicJewel {
+    @include model;
+
+    & > .jewel-rating,
+    & > .jewel-name,
+    & > .jewel-create-time { 
+        width: 100%; 
+        margin: 0 auto; 
+        font-size: 18px; 
+        font-weight: bold; 
+        background: #fff; 
+        padding: 1% 0;
+    }
+
+    & > .publicJewel-image { 
+        width: 100%; 
+        height: 300px; 
+        border-radius: 0.3rem;
+        opacity: 0;
+        animation: image-View 2s 0.3s linear forwards;
+    }
+
+    & > .jewel-view {
+        background: rgba(255,255,255,0.8);
+        padding: 1.5rem 0;
+        & > a { 
+            cursor: pointer;
+            text-decoration: none; 
+            padding: 0.5rem 1.3rem;
+            border-radius: 0.5rem;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgb(21,140,186);
+            border: 1px solid #fff;
+            color: #fff;
+            &:hover { 
+                background: #fff; 
+                color: rgb(21,140,186); 
+                border: 1px solid rgb(21,140,186); 
+            }       
+        }
+    }
+}
