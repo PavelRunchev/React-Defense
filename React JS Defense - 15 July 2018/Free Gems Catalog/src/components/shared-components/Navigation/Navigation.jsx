@@ -17,7 +17,10 @@ class Navigation extends Component {
     onLogout(e) {
         e.preventDefault();
 
-        RequestUser.logout().then(() => {
+        RequestUser.logout().then(res => {
+            if(res.error) {
+                return toastr.error('No Authentication! Try again sign in!');
+            }
             localStorage.clear();
             toastr.success('Logout successful');
             this.props.history.push('/home');

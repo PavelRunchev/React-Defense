@@ -35,7 +35,10 @@ class Dropdown extends Component {
                     </li>
                     <li>
                         {loggedUser && <NavLink to="/myRoom/privateRoomSection">My Room</NavLink>}
-                    </li>           
+                    </li>
+                    <li>
+                        {isAdmin && loggedUser && <NavLink to="/admin/adminOptions">Admin Options</NavLink>}
+                    </li>                    
                 </ul>
             </li>
         );

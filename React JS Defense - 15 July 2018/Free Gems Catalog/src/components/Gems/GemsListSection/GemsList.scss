@@ -14,9 +14,10 @@
 
     & > .gems {
         width: 100%;
-        margin: 0 auto;
+        margin: 3% auto;
         display: flex;
         justify-content: space-around;
+
     }
 
     & > #page-numbers {
@@ -51,6 +52,7 @@
             flex-wrap: nowrap;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 3%;
         }    
 
         & > #page-numbers { 
@@ -84,3 +86,4 @@
         } 
     }
 }
+

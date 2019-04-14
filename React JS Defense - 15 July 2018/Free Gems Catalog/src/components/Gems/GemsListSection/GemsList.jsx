@@ -13,7 +13,7 @@ class GemsListBase extends React.Component {
         super(props);
 
         this.state = {
-            gemsList: this.props.data,
+            findingGems: [],
             searchName: ''
         };
 
@@ -42,17 +42,19 @@ class GemsListBase extends React.Component {
         
         try{
             const findingGems = await RequestGems.searchGems(search);
-            this.setState({ gemsList: findingGems });
+
+            this.setState({ findingGems });
         }catch(err) { toastr.danger(err.message); }
     }
 
-    componentDidUpdate() { }
+    componentWillUpdate() { }
 
     render() {
-        const data = this.state.gemsList || this.props.data;
+        const data = this.props.data;
+        const findingGems = this.state.findingGems;
         const [currentPage, pageNumbers] = this.props.pages;
         const [handleClick, prevHandler, nextHandler] = this.props.handler;
-        
+      
         const renderPage = pageNumbers.map((number, index) => {
             return (
                 <li className={currentPage === number ? 'page-item active' : 'page-item'} key={number}>
@@ -64,9 +66,16 @@ class GemsListBase extends React.Component {
         return (
             <div className="inner-gems">
                 <SearchGems value={[this.onSubmit, this.onChangeHandler]}/>
+                {!findingGems.length ? '' :
+                    <div className="gems">
+                        {findingGems.map((g, i) => {
+                            return <Gem key={g._id} index={i + 1} props={g}/>;
+                        })}
+                    </div>
+                }
                 <div className="gems">
                     {data.map((g, i) => {
-                        return <Gem key={g._id} props={g}/>;
+                        return <Gem key={g._id} index={i + 1} props={g}/>;
                     })}
                 </div>
                 <div id="page-numbers">

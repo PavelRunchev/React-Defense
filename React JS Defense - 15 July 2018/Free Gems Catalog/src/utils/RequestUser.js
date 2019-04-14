@@ -37,6 +37,86 @@ let RequestUser = {
             }
         });
     },
+
+    allUsers: () => {
+        return fetch(`${HostUrl}/user/${AppKey}/`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
+            }
+        }).then(res => {
+            return res.json();
+        });
+    },
+
+    getUserById: (id) => {
+        return fetch(`${HostUrl}/user/${AppKey}/${id}`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            return res.json();
+        });
+    },
+
+    editUser: (id, user) => {
+        return fetch(`${HostUrl}/user/${AppKey}/${id}`, {
+            method: 'PUT',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+    },
+
+    infoForMe: () => {
+        return fetch(`${HostUrl}/user/${AppKey}/_me`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            return res.json();
+        });
+    },
+
+    disableUser: (id) => {
+        return fetch(`${HostUrl}/user/${AppKey}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            return res.json();
+        });
+    },
+
+    removeUser: (id) => {
+        return fetch(`${HostUrl}/user/${AppKey}/${id}?hard=true`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
+            }
+        });
+    },
+
+    lockdownUser: (user) => {
+        return fetch(`${HostUrl}/rpc/${AppKey}/lockdown-user`, {
+            method: 'POST',
+            header: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then(res => {
+            return res.json();
+        });
+    }
 };
 
 export default RequestUser;

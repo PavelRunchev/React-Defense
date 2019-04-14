@@ -1,0 +1,161 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+#signIn {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 7% 0;
+
+    & > section {
+        display: flex;
+        width: 32rem;
+        margin: 0 auto;
+        border: 2px solid rgb(21,140,186);
+        border-radius: 0.5rem;
+        -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        overflow: hidden;
+        opacity: 0;
+        animation: visibleForm 0.5s 1s forwards;
+
+        & > .signInForm {
+            background: linear-gradient(rgba(21,140,186, 0.3), rgba(21,140,186, 0.3));
+            width: 100%;
+            padding: 5%;
+
+            & > h2 { 
+                margin: 5% 0 20% 0;
+                font-weight: bold;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgb(21,140,186);
+            }
+            & > form {
+                    width: 80%;
+                    margin: 0 auto;
+
+                    & > .form-group { 
+                        display: flex;
+                        flex-direction: column;
+                        & > label {
+                            display: block;
+                            text-align: left;
+                            font-size: 16px; 
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            text-shadow: 0.5px 0.5px 0.5px rgb(0,0,0);
+                            padding-left: 4rem;
+                            padding-bottom: 2%;
+                            margin: 0;
+                        }
+
+                        & > span {
+                            display: flex;
+                            &:focus + .pass { color: #158CBA; }
+    
+                            & > input { 
+                                width: 80%;
+                                margin-left: 15%; 
+                                z-index: 9999;
+    
+                                //focus placeholder for Chrome
+                                &:focus + .pass,
+                                &:focus + .email-login,
+                                &:focus::-webkit-input-placeholder { border-color: #158CBA; color: #158CBA; }
+    
+                                //focus placeholder for FireFox 19+
+                                &:focus + .pass,
+                                &:focus + .email-login,
+                                &:focus::-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+    
+                                //focus placeholder for FireFox 18-
+                                &:focus + .pass,
+                                &:focus + .email-login,
+                                &:focus:-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+    
+                                //focus placeholder for Internet Explorer
+                                &:focus + .pass,
+                                &:focus + .email-login,
+                                &:focus:-ms-input-placeholder { border-color: #158CBA; color: #158CBA; }
+                            }
+    
+                            & > .pass,
+                            & > .email-login {  position: relative; right: 88%; }
+                        }
+
+                        & > #signIn {
+                            cursor: pointer;
+                            outline: none;
+                            border: none;
+                            width: 7rem;
+                            background: rgb(21,140,186);
+                            border: 1px solid #fff;
+                            margin: 5% auto;
+                            border-radius: 0.5rem;
+                            padding: 0.5rem 1.5rem;
+                            font-weight: bold;
+                            color: #fff;
+                            font-size: 20px;
+                            &:hover { 
+                                -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+                                -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+                                box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+                                background: #fff;
+                                color: rgb(21,140,186);
+                                border: 1px solid rgb(21,140,186);
+                            }
+                        }
+        
+                        & > a { 
+                            text-decoration: none;
+                            font-size: 20px; 
+                            color: #fff; 
+                            font-weight: bold;
+                            text-shadow: 0.5px 0.5px 0.5px rgb(0,0,0);
+                            &:hover {
+                                color: #000;
+                                text-shadow: 0.5px 0.5px 0.5px rgb(255,255,255);
+                            }
+                        }                           
+                    }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #signIn { & > section { width: 90%; } }
+}
+
+@media screen and (max-width: 450px) {
+    #signIn {
+        & > section {
+           & > .signInForm {
+               & > h2 { font-size: 24px; }
+               & > form {
+                    .form-group { 
+                        font-size: 14px; 
+                        & label { 
+                            font-size: 12px; 
+                            padding-left: 2rem;
+                        }
+                    }
+
+                    & .no-account > a { font-size: 12px; }
+               }
+           }
+        }
+    }
+}
+
+@media screen and (max-width: 160px) {
+    #signIn {
+        & > section & > .signInForm & > form > .form-group > #signIn {
+                    width: 90%;
+                    font-size: 10px;
+                    padding: 10% 20%;
+        }
+    }
+}

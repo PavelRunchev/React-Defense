@@ -15,25 +15,29 @@ nav {
     & .navbar-brand { 
       font-size: 20px; 
       border-bottom: 1px solid rgb(21,140,186);
+      border-top: 1px solid rgb(21,140,186);
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
 
       &:hover {
         text-shadow: 1px 1px rgb(0,0,0);
         color: #fff;
-        border-bottom: 1px solid azure;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #fff;
       }
     }
 
     & #navbarColor01 {
         width: 30%;
-        & ul > li { margin: 0 0.4rem; }
-        & ul > li > a {
+        & > ul > li { margin: 0 0.4rem; }
+        & > ul > li > a {
             font-size: 20px;
             font-weight: 400;
             border-radius: 0.5rem;
             border-bottom: 1px solid rgb(21,140,186);
             border-top: 1px solid rgb(21,140,186);
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding-left: 1.3rem;
+            padding-right: 1.3rem;
             &:hover {
                 color: #fff;
                 border-bottom: 1px solid #fff;
@@ -52,19 +56,6 @@ nav {
                 font-weight: bold;
                 text-shadow: 1px 1px rgb(0,0,0);
             }
-        }
-    }
-
-    & > .In-progress {
-        z-index: -1;
-        position: fixed;
-        background: goldenrod;
-        padding: 10px;
-        border-radius: 0.3rem;
-        //left: 48rem;
-        & > h2 { 
-            font-weight: bold;
-            text-shadow: 1px 1px rgb(0,0,0);
         }
     }
 

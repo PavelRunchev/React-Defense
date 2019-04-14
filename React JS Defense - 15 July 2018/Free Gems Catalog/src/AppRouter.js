@@ -10,17 +10,24 @@ import SpecialThanks from './components/shared-components/SpecialThanks/SpecialT
 import Contacts from './components/shared-components/Contacts/Contacts';
 import NoFindPage from './components/shared-components/NoFindingPage/NoFindingPage';
 
-//Gems Component
+import SignIn from './components/shared-components/SignIn/SignIn';
+import SignUp from  './components/shared-components/SignUp/SignUp';
+
+//Gems Components
 const GemsListSection = React.lazy(() => import('./components/Gems/GemsListSection/GemsListSection'));
 
-//Public Jewels Component
+//Public Jewels Components
 const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
 
-//Jewels Component
+//Jewels Components
 const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection'));
 
-//MyRoom Component
+//MyRoom Components
 const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom.jsx'));
+
+//UserOptions Component
+const AdminOptions = React.lazy(() => import('./components/AdminOptions/AdminOptions'));
+const EditUser = React.lazy(() => import('./components/AdminOptions/EditUser/EditUser.jsx'));
 
 const AppRouter = () => (
     
@@ -35,6 +42,9 @@ const AppRouter = () => (
             <Route path="/support" component={Support}/>
             <Route path="/contact" component={Contacts}/>
 
+            <Route path="/signIn" component={SignIn}/>
+            <Route path="/signUp" component={SignUp}/>
+
             <Route exact path="/gems/allGems" render={() => auth.isLogged() ? <GemsListSection/> : <Home/>}/>
 
             <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
@@ -43,8 +53,8 @@ const AppRouter = () => (
 
             <Route exact path="/myRoom/privateRoomSection" render={() => auth.isLogged() ? <MyRoom/> : <Home/>}/>
 
-
-        
+            <Route exact path="/admin/adminOptions" render={() => auth.isLogged() ? <AdminOptions/> : <Home/>}/>
+            <Route exact path="/adminOptions/edit-user/:id" render={() => auth.isLogged() ? <EditUser/> : <Home/>}/>
             <Route path="**" component={NoFindPage} />
         </Switch>
     </Suspense>
