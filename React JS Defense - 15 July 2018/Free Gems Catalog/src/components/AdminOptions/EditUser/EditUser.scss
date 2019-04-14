@@ -1,0 +1,72 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+#edit-user {
+    padding: 2%;
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & > h2 { @include h2; }
+
+    & > .inner-edit-user {
+        @include inner-template;
+        padding: 3% 6%;
+        width: 30rem;
+        & > table {
+            margin-bottom: 10%;
+        }
+
+        & > form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            & > span {
+                display: flex;
+                flex-direction: column;
+                & > label { 
+                    font-weight: bold;
+                    color: #fff;
+                    font-size: 18px;
+                    text-shadow: 1px 1px rgb(0,0,0);
+                }
+
+                & > input {
+                    border: none;
+                    outline: none;
+                    padding: 0.4rem 1rem;
+                    border-radius: 0.2rem;
+                    font-size: 18px;
+                }
+
+                & > #edit-user {
+                    @include edit-button;
+                    padding: 0.5rem 1.3rem;
+                    margin: 0 auto;
+                    margin-top: 2.1rem;
+                    width: 40%;
+
+                }
+            }           
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #edit-user {
+        & > .inner-edit-user {
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: 250px) {
+    #edit-user {
+        & > .inner-edit-user {
+            width: 95%;
+            & > form > span > #edit-user {
+                width:  60%;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import '../../sass/mixins';
+@import '../../sass/animations';
+
+#user-options {
+    padding: 1%;
+    background-image: url('../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & > h2 { @include h2; margin: 0; padding: 0; }
+
+    & > .inner-user-options {
+        @include inner-template;
+        padding: 3%;
+        width: 83%;
+        //overflow: hidden;
+
+        & > h3 { 
+            margin-bottom: 0; 
+            color: #fff;
+            text-shadow: 1px 1px rgb(0,0,0);
+        }
+
+        & > #refresh {
+            cursor: pointer;
+            position: relative;
+            float: right;
+            background: none;
+            border: none;
+            outline: none;
+            padding-bottom: 1rem;
+            color: #000;
+            &:hover { color: #fff; }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #user-options {
+        & > .inner-user-options {
+            & > #refresh {
+                float: none;
+            }
+        }
+    }
+}

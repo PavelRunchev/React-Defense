@@ -105,11 +105,23 @@ let RequestUser = {
         });
     },
 
-    lockdownUser: (user) => {
-        return fetch(`${HostUrl}/rpc/${AppKey}/lockdown-user`, {
+    restoreUser: (id) => {
+        return fetch(`${HostUrl}/user/${AppKey}/${id}/_restore`, {
             method: 'POST',
             header: {
-                Authorization: 'Kinvey ' + localStorage.getItem('authtoken'),
+                Authorization: '978d5f30e4b140e79ff46b5ce9cea09b',
+                'Content-Type': 'application/json'
+            },
+        }).then(res => {
+            return res.json();
+        });
+    },
+
+    lockdownUser: (user) => {
+        return fetch(`${HostUrl}/rpc/kid_BkztNzfX7/lockdown-user`, {
+            method: 'POST',
+            header: {
+                Authorization: 'Basic 9f55457387ed44f383636d1be6fca65b',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
