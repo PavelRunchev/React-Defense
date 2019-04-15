@@ -18,7 +18,7 @@ class Dropdown extends Component {
                         <ul className="nested-navlink-gems">
                             <li>
                                 {loggedUser && <NavLink to="/gems/allGems">Gems List</NavLink>}
-                                {isAdmin && loggedUser && <NavLink to="/createGem">Create Gem</NavLink>}
+                                {isAdmin && loggedUser && <NavLink to="/gems/createGem">Create Gem</NavLink>}
                             </li>
                         </ul>
                     </li>

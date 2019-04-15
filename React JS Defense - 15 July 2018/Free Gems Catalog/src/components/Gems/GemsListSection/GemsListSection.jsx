@@ -8,7 +8,7 @@ import Loading from '../../Loading/Loading';
 class GemsListSection extends Component {
     render () {
         return (
-            <div className="container-fluid" id="gemsSection">
+            <div className="container-fluid gemsSection">
                 <h2>Gems Section</h2>
                 {this.props.data !== undefined ? 
                     <Loading/> : 

@@ -15,6 +15,8 @@ import SignUp from  './components/shared-components/SignUp/SignUp';
 
 //Gems Components
 const GemsListSection = React.lazy(() => import('./components/Gems/GemsListSection/GemsListSection'));
+const GemDetails = React.lazy(() => import('./components/Gems/GemDetails/GemDetails'));
+const CreateGem = React.lazy(() => import('./components/Gems/CreateGem/CreateGem'));
 
 //Public Jewels Components
 const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
@@ -46,6 +48,8 @@ const AppRouter = () => (
             <Route path="/signUp" component={SignUp}/>
 
             <Route exact path="/gems/allGems" render={() => auth.isLogged() ? <GemsListSection/> : <Home/>}/>
+            <Route exact path="/gems/gemsDetails/:id" render={() => auth.isLogged() ? <GemDetails/> : <Home/>}/>
+            <Route exact path="/gems/createGem" render={() => auth.isLogged && auth.isAdmin() ? <CreateGem/> : <Home/>}/>
 
             <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
 

@@ -1,7 +1,7 @@
 @import '../../../sass/mixins';
 @import '../../../sass/animations';
 
-#edit-user {
+.edit-user {
     padding: 2%;
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
@@ -39,7 +39,7 @@
                     font-size: 18px;
                 }
 
-                & > #edit-user {
+                & > .edit-user {
                     @include edit-button;
                     padding: 0.5rem 1.3rem;
                     margin: 0 auto;
@@ -53,7 +53,7 @@
 }
 
 @media screen and (max-width: 550px) {
-    #edit-user {
+    .edit-user {
         & > .inner-edit-user {
             width: 95%;
         }
@@ -61,11 +61,11 @@
 }
 
 @media screen and (max-width: 250px) {
-    #edit-user {
+    .edit-user {
         & > .inner-edit-user {
             width: 95%;
-            & > form > span > #edit-user {
-                width:  60%;
+            & > form > span > .edit-user {
+                width: 60%;
             }
         }
     }

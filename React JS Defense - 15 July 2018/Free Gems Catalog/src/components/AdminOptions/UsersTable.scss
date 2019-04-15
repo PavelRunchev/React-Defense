@@ -15,7 +15,7 @@
        @include edit-button;
     }
 
-    & > tbody > tr > td > #delete-user {
+    & > tbody > tr > td > .delete-user {
         cursor: pointer;
         outline: none;
         border: none;

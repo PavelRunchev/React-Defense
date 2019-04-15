@@ -6,6 +6,18 @@
     text-shadow: 1px 1px rgb(0,0,0);
 }
 
+@mixin h3 {
+    font-weight: bold; 
+    color: rgb(21,140,186); 
+    text-shadow: 1px 1px rgb(255,255,255);
+}
+
+@mixin h4 {
+    font-weight: bold; 
+    color: #495057;
+    text-shadow: 1px 1px rgb(255,255,255);
+}
+
 @mixin anchor {
     cursor: pointer;
     position: relative;
@@ -31,15 +43,50 @@
     text-decoration: none;
     outline: none;
     border: none;
-    border-radius: 0.2rem;
-    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.2rem;
     background: goldenrod;
+    border: 1px solid #fff;
     color: #fff;
     font-weight: bold;
     margin-right: 0.7rem;
     &:hover {
         background: #fff;
         color: goldenrod;
+        border: 1px solid goldenrod;
+    }
+}
+
+@mixin details-button {
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.2rem;
+    background: rgb(21,140,186);
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 0.7rem;
+    &:hover {
+        background: #fff;
+        border: 1px solid rgb(21,140,186);
+        color: rgb(21,140,186);
+        
+    }
+}
+
+@mixin trash-button {
+    float: right;
+    position: relative;
+    outline: none;
+    border: none;
+    background: none;
+    top: -1rem;
+    & > .trash { 
+        cursor: pointer;
+        color: #F73F34;
     }
 }
 
@@ -53,6 +100,70 @@
     -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+
+@mixin inner-details-template {
+    background: rgba(21,140,186, 0.5);
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 12%, rgba(21,140,186,0.7) 65%);
+    width: 64rem;
+    height: 500px;
+    margin: 0.5% auto;
+    padding: 2%;
+    border: 2px solid rgba(21,140,186,1);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+
+@mixin form-template {
+    width: 60%;
+    height: 500px;
+    border: 2px solid rgb(21,140,186);
+    border-radius: 0.5rem;
+    margin: 2% auto;
+    display: flex;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+@mixin label {
+    display: block;
+    margin-right: 3%; 
+    text-transform: uppercase; 
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 1px 1px rgb(255,255,255);
+}
+
+@mixin input-field {
+    width: 90%;
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+    border: 2px solid lightgrey;
+    padding: 0.3rem 1.3rem;
+
+     //focus placeholder for Chrome
+     &:focus,
+     &:focus::-webkit-input-placeholder { border-color: #158CBA; color: #158CBA; }
+
+     //focus placeholder for FireFox 19+
+     &:focus,
+     &:focus::-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+
+     //focus placeholder for FireFox 18-
+     &:focus,
+     &:focus:-moz-placeholder { border-color: #158CBA; color: #158CBA; }
+
+     //focus placeholder for Internet Explorer
+     &:focus,
+     &:focus:-ms-input-placeholder { border-color: #158CBA; color: #158CBA; }
 }
 
 @mixin model {

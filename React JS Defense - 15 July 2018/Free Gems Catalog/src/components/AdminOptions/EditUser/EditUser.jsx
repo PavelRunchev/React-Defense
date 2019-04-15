@@ -73,35 +73,9 @@ class EditUser extends Component {
         const { user } = this.state;
        
         return (
-            <div className="container-fluid" id="edit-user">
+            <div className="container-fluid edit-user">
                 <h2>Edit User Section</h2>
                 {user === undefined ? <Loading/> : <div className="inner-edit-user">
-                    {/* <table className="table table-hover">
-                        <thead className="table-dark">
-                            <tr>
-                                <th>Username</th>
-                                <th>Loocked / Unlocked</th>
-                                <th>Created</th>
-                                <th>Role</th>                       
-                                <th>Options</th>
-                            </tr>
-                        </thead>
-                        <tbody className="table-info">
-                            <tr>
-                                <td>{user.username}</td>
-                                <td>{lockdown}</td>
-                                <td>{DateConvertor(user._kmd.ect)}</td>
-                                <td>{user._kmd.roles === undefined ? 'User' : 'Admin'}</td>
-                                <td>
-                                    <button onClick={this.onLocked}>Lock / Unlock</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-
-                        </tfoot>
-                    </table> */}
-
                     <form onSubmit={this.onSubmit}>
                         <span>
                             <label>Username</label>
@@ -126,7 +100,7 @@ class EditUser extends Component {
                             <input type="text" name="lastName" placeholder={user.lastName} onChange={this.onChangeHandler}/>
                         </span>
                         <span>
-                            <button id="edit-user">Edit</button>
+                            <button className="edit-user">Edit</button>
                         </span>                       
                     </form>
                    

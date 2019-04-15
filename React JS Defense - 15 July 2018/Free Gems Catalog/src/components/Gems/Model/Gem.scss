@@ -1,7 +1,7 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#gem {
+.gem {
     cursor: pointer;
     width: 18rem;
     overflow: hidden;
@@ -25,7 +25,8 @@
         font-size: 18px; 
         font-weight: bold; 
         background: #fff; 
-    }
+        color: rgb(21,140,186);
+    }    
 
     & > img { 
         width: 100%; 
@@ -35,24 +36,14 @@
     }
 
     & > .gem-view {
-        background: rgba(255,255,255,0.8);
+        background: rgba(255,255,255,0.4);
         padding: 1.5rem 0;
-        & > a { 
-            cursor: pointer;
-            text-decoration: none; 
-            padding: 0.5rem 1.3rem;
-            border-radius: 0.5rem;
-            font-size: 18px;
-            font-weight: bold;
-            background: rgb(21,140,186);
-            border: 1px solid #fff;
-            color: #fff;
-            &:hover { 
-                background: #fff; 
-                color: rgb(21,140,186); 
-                border: 1px solid rgb(21,140,186); 
-            }       
+
+        & > .edit-button { 
+            @include edit-button;
+            padding-right: 1rem;
         }
+        & > .details-button { @include details-button; }
     }
 }
 

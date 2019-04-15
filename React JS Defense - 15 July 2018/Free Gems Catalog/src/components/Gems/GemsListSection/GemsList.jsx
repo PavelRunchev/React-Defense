@@ -78,7 +78,7 @@ class GemsListBase extends React.Component {
                         return <Gem key={g._id} index={i + 1} props={g}/>;
                     })}
                 </div>
-                <div id="page-numbers">
+                <div className="page-numbers">
                     {renderPage.length === 0 ? <h1>Loading &hellip;</h1> :
                         <ul className="pagination pagination-xl ">
                             <li className="page-item">
@@ -86,7 +86,7 @@ class GemsListBase extends React.Component {
                             </li>
                             {renderPage}
                             <li className="page-item">
-                                <button className="page-link" id="next" onClick={nextHandler}>&raquo;</button>
+                                <button className="page-link next" onClick={nextHandler}>&raquo;</button>
                             </li>
                         </ul>  
                     }     

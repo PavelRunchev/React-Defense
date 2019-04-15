@@ -16,7 +16,7 @@ const User = (props) => {
             <td>{user._kmd.roles === undefined ? 'User' : 'Admin'}</td>           
             <td>
                 <Link className="edit-user" to={`/adminOptions/edit-user/${user._id}`}>Edit</Link>
-                <button onClick={(e) => props.handler(e, user._id)} id="delete-user">Delete</button>
+                <button onClick={(e) => props.handler(e, user._id)} className="delete-user">Delete</button>
             </td>
         </tr>
     );

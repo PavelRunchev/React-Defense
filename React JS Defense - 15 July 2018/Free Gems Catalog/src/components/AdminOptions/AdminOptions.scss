@@ -1,7 +1,7 @@
 @import '../../sass/mixins';
 @import '../../sass/animations';
 
-#user-options {
+.user-options {
     padding: 1%;
     background-image: url('../../image/gemstone-crystal.jpg');
     background-size: cover;
@@ -21,7 +21,7 @@
             text-shadow: 1px 1px rgb(0,0,0);
         }
 
-        & > #refresh {
+        & > .refresh {
             cursor: pointer;
             position: relative;
             float: right;
@@ -36,9 +36,9 @@
 }
 
 @media screen and (max-width: 1200px){
-    #user-options {
+    .user-options {
         & > .inner-user-options {
-            & > #refresh {
+            & > .refresh {
                 float: none;
             }
         }

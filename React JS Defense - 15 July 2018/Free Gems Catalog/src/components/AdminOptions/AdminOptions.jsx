@@ -76,11 +76,11 @@ class UserOptions extends Component {
     render () {
         const { users } = this.state;
         return (
-            <div className="container-fluid" id="user-options">
+            <div className="container-fluid user-options">
                 <h2>Admin Section</h2>
                 {!users.length ? <Loading/> : <div className="inner-user-options">
                     <h3>All registered users</h3>
-                    <button id="refresh" onClick={this.onRefresh}>Refresh</button>
+                    <button className="refresh" onClick={this.onRefresh}>Refresh</button>
                     <UsersTable 
                         data={users} 
                         props={this.props}
