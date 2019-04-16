@@ -11,7 +11,7 @@ const PublicJewel = (props) => {
             <img src={publicJewel.imageUrl} className="publicJewel-image" alt="gallery" />           
             <div className="card-text jewel-create-time">Rating: {publicJewel.raiting}</div>
             <div className="jewel-view">              
-                <Link to={`/jewels/detailsJewel/${publicJewel._id}`}>Details</Link>
+                <Link to={`/publicJewels/publicJewelDetails/${publicJewel._id}`}>Details</Link>
             </div>     
         </div>
     );

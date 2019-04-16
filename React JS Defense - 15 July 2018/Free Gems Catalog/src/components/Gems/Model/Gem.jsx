@@ -13,7 +13,7 @@ let Gem = props => {
             <img src={gem.imageUrl} className="gem-image" alt="gallery" />           
             <div className="card-text gem-create-time">Added before: {DateConvertor(gem._kmd.ect)}</div>
             <div className="gem-view">              
-                <Link to={`/allGems/detailsGem/${gem._id}`} className="edit-button">Edit</Link>
+                <Link to={`/gems/editGem/${gem._id}`} className="edit-button">Edit</Link>
                 <Link to={`/gems/gemsDetails/${gem._id}`} className="details-button">Details</Link>
             </div>
         </div>

@@ -90,7 +90,7 @@ class Footer extends Component {
 
     
         return (
-            <div id="footer">
+            <div className="footer">
                 <section className="services">
                     <div className="contacts">
                         <h5 className="h5">Contacts us</h5>
@@ -107,7 +107,7 @@ class Footer extends Component {
                             </span>
                         </div>
                         <div>
-                            <span>
+                            <span className="email">
                                 <FontAwesomeIcon icon="envelope" color="#fff" pull="left" className="envelope"></FontAwesomeIcon>
                                 Pavel.Runchev@gmail.com
                             </span>

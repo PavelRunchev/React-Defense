@@ -5,7 +5,7 @@ nav {
     background: rgb(21,140,186);
     position: fixed; 
     width: 100%;
-    & #logo-navigation {
+    & .logo-navigation {
       width: 4rem;
       border-radius: 50%;
       margin: 0 1rem;
@@ -139,8 +139,11 @@ nav {
 
 @media screen and (max-width: 180px) {
     nav {
+        & .logo-navigation { margin: 0; width: 100%; }
         & .navbar-brand {
             font-size: 12px;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }

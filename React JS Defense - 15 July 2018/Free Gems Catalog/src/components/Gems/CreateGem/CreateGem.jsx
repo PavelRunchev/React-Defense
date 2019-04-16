@@ -29,7 +29,7 @@ class CreateGem extends Component {
         /*
         / Name verification
         */
-        if(name === '') {
+        if(name === '' || name === undefined || name === null) {
             return toastr.warning('Name cannot must be empty!');
         }
 
@@ -44,7 +44,7 @@ class CreateGem extends Component {
         /*
         / ImageUrl verification
         */
-        if(imageUrl === '') {
+        if(imageUrl === '' || imageUrl === undefined || imageUrl === null) {
             return toastr.warning('ImageUrl cannot must be empty!');
         }
 
@@ -55,7 +55,7 @@ class CreateGem extends Component {
         /*
         / Color verification
         */
-        if(color === '') {
+        if(color === '' || color === undefined || color === null) {
             return toastr.warning('Color cannot must be empty!');
         }
 

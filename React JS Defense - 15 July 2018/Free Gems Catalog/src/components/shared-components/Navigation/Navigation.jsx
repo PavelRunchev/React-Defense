@@ -34,7 +34,7 @@ class Navigation extends Component {
       
         return (
             <nav className="navbar navbar-expand-lg navbar-dark">
-                <Img src={ require('../../../image/gems.jpg')} id="logo-navigation" alt="logo"/>
+                <Img src={ require('../../../image/gems.jpg')} className="logo-navigation" alt="logo"/>
                 <NavLink className="navbar-brand" to="/">GEMS CATALOG</NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

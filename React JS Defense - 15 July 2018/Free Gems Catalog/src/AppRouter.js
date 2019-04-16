@@ -17,12 +17,16 @@ import SignUp from  './components/shared-components/SignUp/SignUp';
 const GemsListSection = React.lazy(() => import('./components/Gems/GemsListSection/GemsListSection'));
 const GemDetails = React.lazy(() => import('./components/Gems/GemDetails/GemDetails'));
 const CreateGem = React.lazy(() => import('./components/Gems/CreateGem/CreateGem'));
+const EditGem = React.lazy(() => import('./components/Gems/EditGem/EditGem.jsx'));
 
 //Public Jewels Components
 const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
+const PublicJewelDetails = React.lazy(() => import('./components/PublicJewels/PublicJewelDetails/PublicJewelDetails.jsx'));
 
 //Jewels Components
 const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection'));
+const CreateJewel = React.lazy(() => import('./components/Jewels//CreateJewel/CreateJewel'));
+const EditJewel = React.lazy(() => import('./components/Jewels/EditJewel/EditJewel'));
 
 //MyRoom Components
 const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom.jsx'));
@@ -50,10 +54,14 @@ const AppRouter = () => (
             <Route exact path="/gems/allGems" render={() => auth.isLogged() ? <GemsListSection/> : <Home/>}/>
             <Route exact path="/gems/gemsDetails/:id" render={() => auth.isLogged() ? <GemDetails/> : <Home/>}/>
             <Route exact path="/gems/createGem" render={() => auth.isLogged && auth.isAdmin() ? <CreateGem/> : <Home/>}/>
+            <Route exact path="/gems/editGem/:id" render={() => auth.isLogged() && auth.isAdmin() ? <EditGem/> : <Home/>}/>
 
             <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
-
-            <Route exact path="/allJewels/listFromJewels" render={() => auth.isLogged() ? <JewelsListSection/> : <Home/>}/>
+            <Route exact path="/publicJewels/publicJewelDetails/:id" render={() => auth.isLogged() ? <PublicJewelDetails/> : <Home/>}/>
+         
+            <Route exact path="/jewels/allJewels/listFromJewels" render={() => auth.isLogged() ? <JewelsListSection/> : <Home/>}/>
+            <Route exact path="/jewels/createJewel" render={() => auth.isLogged() && auth.isAdmin() ? <CreateJewel/> : <Home/>}/>
+            <Route exact path="/jewels/editJewel/:id" render={() => auth.isLogged() && auth.isAdmin() ? <EditJewel/> : <Home/>}/>
 
             <Route exact path="/myRoom/privateRoomSection" render={() => auth.isLogged() ? <MyRoom/> : <Home/>}/>
 

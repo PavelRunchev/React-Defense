@@ -7,6 +7,7 @@ import RequestGems from '../../../utils/RequestGems';
 
 import Gem from '../Model/Gem';
 import SearchGems from '../SearchGems/SearchGems';
+import Loading from '../../Loading/Loading';
 
 class GemsListBase extends React.Component {
     constructor(props) {
@@ -79,7 +80,7 @@ class GemsListBase extends React.Component {
                     })}
                 </div>
                 <div className="page-numbers">
-                    {renderPage.length === 0 ? <h1>Loading &hellip;</h1> :
+                    {renderPage.length === 0 ? <Loading/> :
                         <ul className="pagination pagination-xl ">
                             <li className="page-item">
                                 <button className="page-link" onClick={prevHandler}>&laquo;</button>

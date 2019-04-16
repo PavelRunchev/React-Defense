@@ -30,7 +30,7 @@ export default function Preloader(WrappedComponent) {
                         if(data.error === 'InvalidCredentials') {
                             return toastr.error('No Authentication! Try Again Sign In!');
                         }
-                        
+
                         this.setState({ ready: true, data: data });
                     }).catch(error => console.log(error));
             } else if(this.props.match.url === '/publicJewels/allPublicJewels') {
@@ -43,7 +43,7 @@ export default function Preloader(WrappedComponent) {
                         data.sort((a, b) => Number(b.raiting) - Number(a.raiting));
                         this.setState({ ready: true, data });
                     }).catch(error => console.log(error));;
-            } else if(this.props.match.url === '/allJewels/listFromJewels') {
+            } else if(this.props.match.url === '/jewels/allJewels/listFromJewels') {
                 RequestJewels.allJewels().then(data => {
                     if(data.error === 'InvalidCredentials') {
                         return toastr.error('No Authentication! Try again sign in!');
@@ -105,6 +105,10 @@ export default function Preloader(WrappedComponent) {
                 const lastIndex = currentPage * itemsForPage;
                 const firstIndex = lastIndex - itemsForPage;
                 listFromItems = data.slice(firstIndex, lastIndex);
+            }
+
+            if(this.state.data.length === 0 && this.state.ready) {
+                return <h3 className="h3 text-warning my=5">No content to the Base or no access!</h3>;
             }
 
             if(this.state.ready) {

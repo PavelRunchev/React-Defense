@@ -15,19 +15,13 @@
         
 
         & > .image-view {
-            background: rgba(21,140,186, 0.7);
-            background: radial-gradient(circle, rgba(255,255,255,0.5) 12%, rgba(21,140,186,0.5) 65%);
-            width: 40%;
+            @include image-View;
             & h3 { @include h4; margin-top: 50%; }
             & > img { width: 100%; height: 596px; }
         }
 
         & > .create-form {
-            background: rgba(21,140,186, 0.7);
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 12%, rgba(21,140,186,0.3) 65%);
-            width: 60%;
-            border-left: 2px solid rgb(21,140,186);
-            padding: 5% 2% 5% 5%;
+            @include create-form;
 
             & > h3 { @include h4; margin-bottom: 7%; }
 

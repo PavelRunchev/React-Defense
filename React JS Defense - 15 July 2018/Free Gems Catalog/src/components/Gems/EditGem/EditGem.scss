@@ -1,7 +1,137 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-.editGem {
-    padding: 0;
-    
+.edit-gem {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2% 0 4% 0;
+
+    & > h2 { @include h2; padding-bottom: 0; }
+    & > h4 { @include h4; color: rgb(218,165,32);}
+
+    & > .inner-editGem {
+        @include form-template;
+        background: rgba(218,165,32, 0.5);
+        background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(218,165,32,0.2) 65%);
+        border: 2px solid goldenrod;
+        width: 63rem;
+
+        & > .image-view {
+            width: 40%;
+            & > h3 { margin-top: 50%; color: goldenrod; }
+            & > img { width: 100%; height: 496px; }
+        }
+
+        & > .edit-form {
+            width: 60%;
+            border-left: 2px solid goldenrod;
+            padding: 1%;
+
+            & > h3 { @include h3; color: goldenrod; padding: 5% 0; }
+
+            & > form {
+                width: 100%;
+                & > .row {
+                    width: 100%;
+                    margin: 2% auto;
+                    display: flex;
+                    justify-content: space-around;
+                    & > span {
+                        width: 40%;
+                        display: inline-block;
+                        & > label { @include label; }
+                        & > input { @include input-field; width: 100%; }
+                    } 
+
+                    & > .edit-submit-gem {
+                        @include edit-button; margin-top: 5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .edit-gem {
+        & > h4 { font-size: 20px; }
+        & > .inner-editGem {  width: 92%; }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .edit-gem {
+        & > h4 { font-size: 18px; }
+        & > .inner-editGem {
+            height: auto;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            & > .image-view {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            & > .edit-form {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .edit-gem {
+        & > .inner-editGem {
+            & > .edit-form {
+               & > form {
+                    & > .row {
+                        flex-direction: column;
+                        justify-content: center;
+                        & > span { width: 70%; margin: 5% auto; }
+                        & > .edit-submit-gem { width: 7rem; margin: 3% auto; }
+                    }
+               } 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .edit-gem {
+        & > .inner-editGem {
+            & > .edit-form {
+               & > form {
+                    & > .row {
+                      
+                        & > span { width: 90%; }
+                        & > .edit-submit-gem { width: 70%; }
+                    }
+               } 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .edit-gem {
+        & > h2 { font-size: 18px; }
+        & > .inner-editGem {
+            & > .edit-form {
+                & > h3 { font-size: 16px; }
+                & > form {
+                    & > .row {
+                      
+                        & > span { 
+                            width: 99%; 
+                            & > label { font-size: 12px; }
+                        }
+                        & > .edit-submit-gem { width: 99%; }
+                    }
+               } 
+            }
+        }
+    }
 }

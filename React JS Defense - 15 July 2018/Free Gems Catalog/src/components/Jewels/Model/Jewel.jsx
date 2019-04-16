@@ -12,7 +12,7 @@ const Jewel = (props) => {
             <img src={jewel.imageUrl} className="jewel-image" alt="gallery" />           
             <div className="card-text jewel-set">Set: {jewel.type}</div>
             <div className="jewel-view">              
-                <Link to={`/editOfJewels/jewelsEditForAdmin/${jewel._id}`}>
+                <Link to={`/jewels/editJewel/${jewel._id}`}>
                     <FontAwesomeIcon icon="edit" size="3x" id="edit-icon"></FontAwesomeIcon>
                 </Link>
             </div>     

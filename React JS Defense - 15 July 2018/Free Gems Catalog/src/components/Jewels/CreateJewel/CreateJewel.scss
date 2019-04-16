@@ -1,0 +1,46 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+.createJewel {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 1%;
+    & > h2 { @include h2; padding-bottom: 0; }
+    & > h4 { @include h3; }
+
+    & > .inner-createJewel {
+        @include form-template;
+        width: 60rem;
+        overflow: hidden;
+
+        & > .image-view {
+            @include image-View;
+            
+            & h3 { @include h4; margin-top: 50%; }
+            & > img { width: 100%; height: 496px; }
+        }
+
+        & > .create-form {
+            @include create-form;
+            padding: 2%;
+            & > h3 { @include h4; margin-bottom: 7%; }
+
+            & > form {
+                width: 100%;
+                & > .row {
+                    width: 60%;
+                    margin: 2% auto;
+                    display: flex;
+                    flex-direction: column;
+                    & > label { @include label; }
+                    & > input { @include input-field; }
+                }
+                & > .create-jewel {
+                    @include details-button;
+                    margin-top: 1rem;
+                }
+            }            
+        }
+    }
+}

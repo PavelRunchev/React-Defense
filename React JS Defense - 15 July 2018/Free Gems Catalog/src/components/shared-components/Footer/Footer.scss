@@ -1,7 +1,7 @@
 @import '../../../sass/mixins';
 @import '../../../sass/animations';
 
-#footer  {
+.footer  {
     background: rgb(21,140,186);
     display: block;
     width: 100%;
@@ -111,7 +111,7 @@
 }
 
 @media screen and (max-width: 1179px) {
-    #footer {
+    .footer {
         & > .services { 
             & > .contacts { width: 25%; }
         }
@@ -120,7 +120,7 @@
 
 
 @media screen and (max-width: 1015px) {
-    #footer {
+    .footer {
         padding: 2%;
         
         & > .services {
@@ -150,7 +150,7 @@
 }
 
 @media screen and (max-width: 909px) {
-    #footer {
+    .footer {
         padding: 2% 0;
         & > .services {
             & > .contacts,
@@ -164,7 +164,7 @@
 }
 
 @media screen and (max-width: 791px) {
-    #footer {
+    .footer {
         padding: 2% 0;
         & > .services {
             flex-direction: column;
@@ -181,7 +181,7 @@
 }
 
 @media screen and (max-width: 401px) {
-    #footer {
+    .footer {
         & > .services {
             flex-wrap: wrap;
             & > .contacts,
@@ -200,7 +200,7 @@
 }
 
 @media screen and (max-width: 271px) {
-    #footer {
+    .footer {
         & .services .contacts div span,
         .services .links ul > li > a,
         .services .copyright div { font-size: 14px; }
@@ -209,10 +209,55 @@
 }
 
 @media screen and (max-width: 213px) {
-    #footer {
+    .footer {
         & .services .contacts div span,
         .services .links ul > li > a,
         .services .copyright div { font-size: 10px; }
         & .footer-bottom .text-center { font-size: 14px; }
+        & > .services {
+            & > .contacts {
+                & > h5, 
+                & > div { margin: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    & > .email { 
+                        width: 100%; 
+                        font-size: 8px;
+                    }
+                }
+            }
+
+            & > .connect {
+                & > .icons {
+                    display: flex;
+                    flex-direction: column;
+                    & > svg { margin: 5% auto; }
+                }
+                & > div { margin: 0; margin-right: 0; }
+            }
+
+            & > .copyright {
+                width: 100%;
+                margin: 0;
+                margin-bottom: 20%;
+                & > div {
+                    margin: 0;
+                    margin-right: 0;
+                    padding-left: 5%;
+                }
+
+                & > .live-time > .fa-clock { 
+                    margin: 20% auto; 
+                    text-align: center; 
+                    display: block;
+                    font-size: 38px;
+                }
+                & > .live-time > .time { 
+                    font-size: 16px;
+                    margin-bottom: 20%; 
+                }
+            }
+        }
+       
     }
 }

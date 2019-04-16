@@ -37,7 +37,7 @@ let RequestGems = {
         });
     },
 
-    detailsGem: (id) => {
+    getGemById: (id) => {
         return fetch(`${HostUrl}/appdata/${AppKey}/gems/${id}`, {
             method: 'GET',
             headers: {

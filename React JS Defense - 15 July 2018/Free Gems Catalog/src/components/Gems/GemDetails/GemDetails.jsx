@@ -7,6 +7,7 @@ import Loading from '../../Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import swal from 'sweetalert';
 import toastr from  'toastr';
+import auth from '../../../utils/Auth';
 
 class GemDetails extends Component {
     constructor(props) {
@@ -25,10 +26,10 @@ class GemDetails extends Component {
 
         if(gemId !== undefined) {
             try {
-                const res = await RequestGems.detailsGem(gemId);
+                const res = await RequestGems.getGemById(gemId);
 
                 if(res.error) {
-                    return toastr.error(res.error);
+                    return toastr.error('Invalid Credential!You Login!');
                 }
     
                 this.setState({ gem: res });
@@ -52,7 +53,7 @@ class GemDetails extends Component {
                 try {
                     const res = await RequestGems.deleteGem(gemId);
                     if(res.error) {
-                        return toastr.error(res.error);
+                        return toastr.error('Invalid Credential!You Login!');
                     }
     
                     toastr.success('The gem is deleted successful!');
@@ -130,9 +131,9 @@ class GemDetails extends Component {
                             <img  src={gem.imageUrl} alt="gallery"/>
                         </div>
                         <div className="info">
-                            <button onClick={this.onDeleteGem}>
+                            {auth.isAdmin() && <button onClick={this.onDeleteGem}>
                                 <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
-                            </button>
+                            </button>}
                             <h4>Info for Gem</h4>
                             <div className="inner-text">
                                 <p>Color: {gem.color}</p>

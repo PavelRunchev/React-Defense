@@ -28,8 +28,8 @@ class Dropdown extends Component {
                         <ul className="nested-navlink-jewels">
                             <li>
                                 {loggedUser && <NavLink to="/publicJewels/allPublicJewels">Public Jewels</NavLink>}
-                                {isAdmin && loggedUser && <NavLink to="/createJewel">Create Jewel</NavLink>}
-                                {isAdmin && loggedUser && <NavLink to="/allJewels/listFromJewels">All Jewels</NavLink>}
+                                {isAdmin && loggedUser && <NavLink to="/jewels/createJewel">Create Jewel</NavLink>}
+                                {isAdmin && loggedUser && <NavLink to="/jewels/allJewels/listFromJewels">All Jewels</NavLink>}
                             </li>                        
                         </ul>
                     </li>
