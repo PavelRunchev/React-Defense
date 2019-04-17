@@ -73,11 +73,11 @@
         background: #fff;
         border: 1px solid rgb(21,140,186);
         color: rgb(21,140,186);
-        
     }
 }
 
 @mixin trash-button {
+    cursor: pointer;
     float: right;
     position: relative;
     outline: none;
@@ -85,8 +85,8 @@
     background: none;
     top: -1rem;
     & > .trash { 
-        cursor: pointer;
         color: #F73F34;
+        &:hover { color: #000; }
     }
 }
 

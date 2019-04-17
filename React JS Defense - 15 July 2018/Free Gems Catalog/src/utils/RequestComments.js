@@ -1,5 +1,4 @@
 const AppKey = 'kid_BkztNzfX7';
-const AppSecrets = 'a4437d8a4bfe4ae590d179cdfcf1151a';
 const HostUrl = 'https://baas.kinvey.com';
 
 let RequestComments = {
@@ -16,7 +15,7 @@ let RequestComments = {
         });
     },
 
-    allComments: (jewelId) => {
+    allCommentsToCurrentJewel: (jewelId) => {
         return fetch(`${HostUrl}/appdata/${AppKey}/comments?query={"jewelId":"${jewelId}"}&sort={"_kmd.ect": -1}`, {
             method: 'GET',
             headers: {

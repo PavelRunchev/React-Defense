@@ -13,7 +13,7 @@ let RequestPublicJewels = {
         });
     },
 
-    detailsPublicJewel: (id) => {
+    getJewelById: (id) => {
         return fetch(`${HostUrl}/appdata/${AppKey}/myJewelryStore/${id}`, {
             method: 'GET',
             headers: {

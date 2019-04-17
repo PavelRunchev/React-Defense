@@ -1,0 +1,27 @@
+
+.comment {
+    width: 100%;
+    margin: 3% auto;
+    background: #fff;
+    border: 1px solid #495057;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
+    padding: 2% 0 1% 0;
+
+    & > h5,
+    & > p { color: #495057;}
+    & > p > span { font-weight: bold; }
+
+    & > p > .deleteLink { 
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-weight: bold;
+        border-bottom: 1px solid #fff;
+        color: rgb(21,140,186); 
+        &:hover { color: red; }
+    }
+}

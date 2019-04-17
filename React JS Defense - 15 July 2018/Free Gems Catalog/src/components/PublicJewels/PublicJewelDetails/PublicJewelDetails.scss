@@ -1,0 +1,46 @@
+@import '../../../sass//mixins';
+@import '../../../sass/animations';
+
+.publicJewel-details {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 1%;
+
+    & > h2 { @include h2;  }
+    & > .inner-publicJewel-details {
+        @include inner-details-template;
+        width: 90rem;
+        height: auto;
+        display: block;
+
+        & > .view-publicJewel {
+            padding-top: 3%;
+            display: flex;
+            justify-content: space-around;
+            & > .jewel-model {
+                width: 30%;
+                & > .publicJewel {
+                    width: 100%;
+                    & > img { width: 100%; }
+                }
+    
+                & .eye { 
+                    color: #495057; 
+                    font-size: 40px;
+                    &:hover { color: #fff; }
+                }
+    
+                & > h4 { @include h4; }
+            }
+    
+            & > .comments-section { width: 35%; }
+        }
+
+        & > button { 
+            @include trash-button; 
+            display: inline-block;
+            
+        }
+    }
+}

@@ -22,6 +22,7 @@ const EditGem = React.lazy(() => import('./components/Gems/EditGem/EditGem.jsx')
 //Public Jewels Components
 const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
 const PublicJewelDetails = React.lazy(() => import('./components/PublicJewels/PublicJewelDetails/PublicJewelDetails.jsx'));
+const EnlargementJewel = React.lazy(() => import('./components/PublicJewels/EnlargementJewel/EnlargementJewel.jsx'));
 
 //Jewels Components
 const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection'));
@@ -58,6 +59,7 @@ const AppRouter = () => (
 
             <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
             <Route exact path="/publicJewels/publicJewelDetails/:id" render={() => auth.isLogged() ? <PublicJewelDetails/> : <Home/>}/>
+            <Route path="/publicJewels/publicJewelDetails/enlargmentJewel/:id" render={() => auth.isLogged() ? <EnlargementJewel/> : <Home/>}/>
          
             <Route exact path="/jewels/allJewels/listFromJewels" render={() => auth.isLogged() ? <JewelsListSection/> : <Home/>}/>
             <Route exact path="/jewels/createJewel" render={() => auth.isLogged() && auth.isAdmin() ? <CreateJewel/> : <Home/>}/>
