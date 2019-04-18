@@ -5,12 +5,13 @@
     background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),
     url('../../../image/jewelry-contact-background.jpg');
     background-size: 100% 110%;
-
+    overflow: hidden;
     padding: 4%;
     height: 83vh;
     & > h2 { font-weight: bold; color: #fff; text-shadow: 1px 1px rgb(0,0,0); }
 
     & > .inner-contacts {
+        
         & > #owner { @include contact; animation: ownerAnimation 10s 0.1s linear forwards; }
         & > #owner-name { @include contact; animation: ownerNameAnimation 10s 3s linear forwards; }
         & > #owner-email { @include contact; animation: ownerEmailAnimation 10s 6s linear forwards; }

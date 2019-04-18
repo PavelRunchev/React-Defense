@@ -1,0 +1,40 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+.inner-myJewels {
+    border: 2px solid #fff;
+    border-radius: 0.4rem;
+
+    & > h3 { @include h2; }
+    & > .myJewels {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & > .page-numbers {
+        display: inline-block; 
+        margin: 5% auto; 
+        width: 19%;
+        & > ul > li { margin: 0 3%; }
+        & > ul {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .inner-myJewels {
+        & > .myJewels {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .inner-myJewels {
+        & > .myJewels {
+            & > .publicJewel { width: 90%; }
+        }
+    }
+}

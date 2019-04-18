@@ -1,6 +1,7 @@
 import React from 'react';
 import Loading from '../Loading/Loading';
 import RequestPublicJewels from '../../utils/RequestPublicJewels';
+import RequestJewels from '../../utils/RequestJewels';
 import toastr from 'toastr';
 
 export default function EditJewelLoader(WrappedComponent) {
@@ -34,16 +35,16 @@ export default function EditJewelLoader(WrappedComponent) {
     
                     this.setState({ ready: true, jewel });
                 }catch(error) { console.log(error.message); }
-            } else if(this.props.match.url === '/publicJewels/allPublicJewels') {
-                // RequestPubliBaecJewels.allPublicJewels()
-                //     .then(data => {
-                //         if(data.error === 'InvalidCredentials') {
-                //             return toastr.error('No Authentication! Try again sign in!');
-                //         }
+            } else if(this.props.match.path === '/jewels/editJewel/:id') {
+                try {
+                    const id = this.props.match.params.id;
+                    const jewel = await RequestJewels.getJewelById(id);
+                    if(jewel.error) {
+                        return toastr.error('No Authentication! Try again sign in!');
+                    }
 
-                //         data.sort((a, b) => Number(b.raiting) - Number(a.raiting));
-                //         this.setState({ ready: true, data });
-                //     }).catch(error => console.log(error));;
+                    this.setState({ ready: true, jewel });
+                }catch(error) { console.log(error.message); }
             } 
         }
 
@@ -124,7 +125,7 @@ export default function EditJewelLoader(WrappedComponent) {
             /*
             / Owner verification
             */
-            if(owner === '' || owner === undefined || owner === null) {
+            if(owner === '') {
                 return toastr.warning('Owner cannot must be empty!');
             }
 
@@ -139,21 +140,34 @@ export default function EditJewelLoader(WrappedComponent) {
                 return toastr.warning('Weight must be positive number!');
             }
 
-
-
-            console.log(rating);
-            const editJewel = { name, gems, type, imageUrl, owner, raiting: rating };
-            if(jewelId !== undefined) {
-                try{
-                    const res = await RequestPublicJewels.editPublicJewel(jewelId, editJewel);
-                    if(res.error) {
-                        return toastr.error('Invalid Credential!You Login!');
-                    }
-
-                    toastr.success('The public jewel is edited Successful!');
-                    this.props.history.push(`/publicJewels/publicJewelDetails/${jewelId}`);
-                }catch(error) { console.log(error.message); }
-            }        
+            let editJewel = {};
+            if(owner === undefined && rating === undefined) {
+                editJewel = { name, gems, type, imageUrl };
+                if(jewelId !== undefined) {
+                    try{
+                        const res = await RequestJewels.editJewel(jewelId, editJewel);
+                        if(res.error) {
+                            return toastr.error('Invalid Credential!You Login!');
+                        }
+    
+                        toastr.success('The public jewel is edited Successful!');
+                        this.props.history.push('/jewels/allJewels/listFromJewels');            
+                    }catch(error) { console.log(error.message); }
+                }        
+            } else {
+                editJewel = { name, gems, type, imageUrl, owner, raiting: rating };
+                if(jewelId !== undefined) {
+                    try{
+                        const res = await RequestPublicJewels.editPublicJewel(jewelId, editJewel);
+                        if(res.error) {
+                            return toastr.error('Invalid Credential!You Login!');
+                        }
+    
+                        toastr.success('The public jewel is edited Successful!');
+                        this.props.history.push(`/publicJewels/publicJewelDetails/${jewelId}`);                  
+                    }catch(error) { console.log(error.message); }
+                }        
+            }
         }
 
         render() {

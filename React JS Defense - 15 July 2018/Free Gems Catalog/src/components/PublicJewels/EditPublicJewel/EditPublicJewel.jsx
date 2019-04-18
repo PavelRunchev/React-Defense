@@ -91,7 +91,7 @@ class EditPublicJewelBase extends Component {
                                 </span>
                             </div>
                             <div className="row">
-                                <button type="submit" className="edit-submit-jewel">Edit Jewel</button>
+                                <button type="submit" className="edit-submit-jewel">Edit</button>
                             </div>
                         </form>
                     </div>
