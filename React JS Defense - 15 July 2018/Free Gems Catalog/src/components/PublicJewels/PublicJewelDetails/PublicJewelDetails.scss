@@ -5,9 +5,9 @@
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 1%;
+    padding-bottom: 3%;
 
-    & > h2 { @include h2;  }
+    & > h2 { @include h2; padding: 2% 0; }
     & > .inner-publicJewel-details {
         @include inner-details-template;
         width: 90rem;
@@ -37,10 +37,137 @@
             & > .comments-section { width: 35%; }
         }
 
+        & > a {
+            float: left;
+            color: goldenrod;
+            &:hover { color: #495057; }
+           
+        }
+
         & > button { 
             @include trash-button; 
             display: inline-block;
-            
+            margin-top: 1.4rem;
+            & > svg {  font-size: 40px; }
         }
     }
+}
+
+@media screen and (max-width: 1500px) {
+    .publicJewel-details {
+        & > .inner-publicJewel-details { width: 96%; }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .publicJewel-details {
+        & > .inner-publicJewel-details {
+            & > .view-publicJewel {
+                & > .jewel-model {
+                    width: 35%;
+                } 
+
+                & > .comments-section {
+                    width: 40%;
+                }
+            }
+        }
+    }           
+}
+
+@media screen and (max-width: 1070px) {
+    .publicJewel-details {
+        & > .inner-publicJewel-details {
+            & > .view-publicJewel {
+                & > .jewel-model {
+                    width: 40%;
+                } 
+
+                & > .comments-section {
+                    width: 45%;
+                }
+            }
+        }
+    }           
+}
+
+@media screen and (max-width: 900px) {
+    .publicJewel-details {
+        & > .inner-publicJewel-details {
+            & > .view-publicJewel {
+                flex-direction: column;
+                justify-content: unset;
+                margin-right: 0;
+                & > .jewel-model {
+                    width: 80%;
+                    margin: 2% auto;
+                    & > .jewel { 
+                        height: auto;
+                        & > h4:nth-of-type(5) { padding-bottom: 0.3rem; } 
+                    }
+                } 
+
+                & > .comments-section {
+                    width: 90%;
+                    margin: 2% auto;
+                }
+            }
+        }
+    }           
+}
+
+@media screen and (max-width: 550px) {
+    .publicJewel-details {
+        & > .inner-publicJewel-details {
+            padding-top: 2rem;
+            & > a,
+            & > button { float: unset; }
+
+            & > a { 
+                margin-right: 1rem; 
+                & > svg { margin-bottom: 1rem; }
+            }
+            & > button { margin: 0; }
+
+            & > .view-publicJewel {
+                & > .jewel-model { width: 90%; } 
+                & > .comments-section { width: 100%; }
+            }
+        }
+    }           
+}
+
+@media screen and (max-width: 400px) {
+    .publicJewel-details {
+        padding: 1%;
+        & > .inner-publicJewel-details {
+            margin-left: 0;
+            margin-right: 0;
+
+            width: 100%;
+            & > .view-publicJewel {
+                & > .jewel-model {
+                    width: 100%;
+                    & > h4 { font-size: 18px; }
+                } 
+
+                & > .comments-section {
+                    width: 100%;
+                    & > form {
+                        & > .form-group {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            & > select {
+                                width: 60%;
+                                margin: 7% auto;
+                            }
+
+                            & > button { width: 70%; margin: 0 auto; }
+                        }
+                    }
+                }
+            }
+        }
+    }           
 }

@@ -168,7 +168,7 @@ class EditJewel extends Component {
                                 <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
                             </button>
                             
-                            <h3>Edit Jewel Form</h3>
+                            <h3>Edit Form</h3>
                             <form onSubmit={this.onEditJewel}>
                                 <div className="row">
                                     <label>Name</label>

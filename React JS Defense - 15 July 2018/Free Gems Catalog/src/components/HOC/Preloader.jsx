@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../Loading/Loading';
 import RequestGems from '../../utils/RequestGems';
-import RequestPubliBaecJewels from '../../utils/RequestPublicJewels';
+import RequestPublicJewels from '../../utils/RequestPublicJewels';
 import RequestJewels from '../../utils/RequestJewels';
 import RequestMyJewels from '../../utils/RequestMyJewels';
 import toastr from 'toastr';
@@ -34,7 +34,7 @@ export default function Preloader(WrappedComponent) {
                         this.setState({ ready: true, data: data });
                     }).catch(error => console.log(error));
             } else if(this.props.match.url === '/publicJewels/allPublicJewels') {
-                RequestPubliBaecJewels.allPublicJewels()
+                RequestPublicJewels.allPublicJewels()
                     .then(data => {
                         if(data.error === 'InvalidCredentials') {
                             return toastr.error('No Authentication! Try again sign in!');

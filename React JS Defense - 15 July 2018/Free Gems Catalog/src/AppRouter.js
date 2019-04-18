@@ -17,12 +17,13 @@ import SignUp from  './components/shared-components/SignUp/SignUp';
 const GemsListSection = React.lazy(() => import('./components/Gems/GemsListSection/GemsListSection'));
 const GemDetails = React.lazy(() => import('./components/Gems/GemDetails/GemDetails'));
 const CreateGem = React.lazy(() => import('./components/Gems/CreateGem/CreateGem'));
-const EditGem = React.lazy(() => import('./components/Gems/EditGem/EditGem.jsx'));
+const EditGem = React.lazy(() => import('./components/Gems/EditGem/EditGem'));
 
 //Public Jewels Components
 const PublicJewelsListSection = React.lazy(() => import('./components/PublicJewels/PublicJewelsListSection/PublicJewelsListSection'));
-const PublicJewelDetails = React.lazy(() => import('./components/PublicJewels/PublicJewelDetails/PublicJewelDetails.jsx'));
-const EnlargementJewel = React.lazy(() => import('./components/PublicJewels/EnlargementJewel/EnlargementJewel.jsx'));
+const PublicJewelDetails = React.lazy(() => import('./components/PublicJewels/PublicJewelDetails/PublicJewelDetails'));
+const EnlargementJewel = React.lazy(() => import('./components/PublicJewels/EnlargementJewel/EnlargementJewel'));
+const EditPublicJewel = React.lazy(() => import('./components/PublicJewels/EditPublicJewel/EditPublicJewel'));
 
 //Jewels Components
 const JewelsListSection = React.lazy(() => import('./components/Jewels/JewelsListSection/JewelsListSection'));
@@ -30,11 +31,11 @@ const CreateJewel = React.lazy(() => import('./components/Jewels//CreateJewel/Cr
 const EditJewel = React.lazy(() => import('./components/Jewels/EditJewel/EditJewel'));
 
 //MyRoom Components
-const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom.jsx'));
+const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom'));
 
 //UserOptions Component
 const AdminOptions = React.lazy(() => import('./components/AdminOptions/AdminOptions'));
-const EditUser = React.lazy(() => import('./components/AdminOptions/EditUser/EditUser.jsx'));
+const EditUser = React.lazy(() => import('./components/AdminOptions/EditUser/EditUser'));
 
 const AppRouter = () => (
     
@@ -60,6 +61,7 @@ const AppRouter = () => (
             <Route exact path="/publicJewels/allPublicJewels" render={() => auth.isLogged() ? <PublicJewelsListSection/> : <Home/>}/>
             <Route exact path="/publicJewels/publicJewelDetails/:id" render={() => auth.isLogged() ? <PublicJewelDetails/> : <Home/>}/>
             <Route path="/publicJewels/publicJewelDetails/enlargmentJewel/:id" render={() => auth.isLogged() ? <EnlargementJewel/> : <Home/>}/>
+            <Route exact path="/publicJewels/publicJewelEdit/:id" render={() => auth.isLogged() && auth.isAdmin() ? <EditPublicJewel/> : <Home/>}/>
          
             <Route exact path="/jewels/allJewels/listFromJewels" render={() => auth.isLogged() ? <JewelsListSection/> : <Home/>}/>
             <Route exact path="/jewels/createJewel" render={() => auth.isLogged() && auth.isAdmin() ? <CreateJewel/> : <Home/>}/>

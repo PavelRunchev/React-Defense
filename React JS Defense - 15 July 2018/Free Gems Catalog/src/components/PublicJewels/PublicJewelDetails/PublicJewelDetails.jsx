@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './PublicJewelDetails.scss';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter, NavLink,  Link } from 'react-router-dom';
 import RequestPublicJewels from '../../../utils/RequestPublicJewels';
 import RequestComments from '../../../utils/RequestComments';
 import PublicJewelDetailsModel from '../Model/PublicJewelDetailsModel';
@@ -9,6 +9,8 @@ import CommentForm from '../Comments/CommentForm/CommentForm';
 import Loading from '../../Loading/Loading';
 import toastr from 'toastr';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import swal from 'sweetalert';
+import auth from '../../../utils/Auth';
 
 class PublicJewelDetails extends Component {
     constructor(props) {
@@ -63,27 +65,90 @@ class PublicJewelDetails extends Component {
         }catch(error) { console.log(error.message); }
     }
 
-    onDeleteJewel(e) {
+    async onDeleteJewel(e) {
         e.preventDefault();
-        // todo
-    }
+        
+        const willDeleteJewel = await swal({
+            title: 'Are you sure want to delete?',
+            text: 'It will be deleted permanently from base?',
+            icon: 'warning',
+            dangerMode: true,
+            showCancelButton: true,
+        });
 
-    onDeleteComment(id) {
+        if (willDeleteJewel) {
+            const jewelId = this.state.jewel._id;
 
-        // todo
-    }
+            if(jewelId !== undefined) {
+                try{
+                    const res = await RequestPublicJewels.deletePublicJewel(jewelId);
+                    if(res.error) {
+                        return toastr.warning('Invalid Credential!You Login!');
+                    }
 
-    onChangeHandler(e) { 
-        console.log(e.target);
-        if(e.target.name === NaN) {
-            return;
+                    swal({ title: 'The jewel is deleted successful!', icon: 'success' });
+                    toastr.success('The jewel is deleted successful!');
+                    this.props.history.push('/publicJewels/allPublicJewels');
+                }catch(error) { console.log(error.message); }
+            }
         }
-        this.setState({ [e.target.name]: e.target.value }); 
     }
 
-    onSubmitComment(e) {
+    async onDeleteComment(id) {
+        const { jewel, jewelId } = this.state;
+        let comments = this.state.comments;
+        if(id !== undefined) {
+            const willDelete = await swal({
+                title: 'Are you sure want to delete?',
+                text: 'It will be deleted permanently from base?',
+                icon: 'warning',
+                dangerMode: true,
+            });
+
+            if(willDelete) {
+                try{
+                    if(comments.some(c => c._id === id)) {
+                        const commentRating = comments.filter(c => c._id === id)[0].raiting;
+                        const res = await RequestComments.deleteComment(id);
+                        if(res.error) {
+                            return toastr.warning('Invalid Credential!You Login!');
+                        }
+
+                        swal({ title: 'The comment is deleted successful!', icon: 'success' }); 
+                        toastr.success('The comment is deleted succesful!');
+                        comments = comments.filter(c => c._id !== id);
+                        this.setState({ comments });
+
+                        const calcRating = Number(jewel.raiting) - Number(commentRating) <= 0 ? 0 : Number(jewel.raiting) - Number(commentRating);
+                        const updateRatingToJewel = {
+                            name: jewel.name,
+                            owner: jewel.owner,
+                            imageUrl: jewel.imageUrl,
+                            gems: jewel.gems,
+                            type: jewel.type,
+                            raiting: calcRating
+                        };
+            
+                        const updatedJewel = await RequestPublicJewels.editPublicJewel(jewelId, updateRatingToJewel);
+                        if(updatedJewel.error) {
+                            return toastr.warning('Invalid Credential!You Login!');
+                        }
+            
+                        this.setState({ 
+                            jewel: updatedJewel, 
+                            rating: updatedJewel.raiting 
+                        });
+                    }                   
+                }catch(error) { console.log(error.message); }
+            }
+        }
+    }
+
+    onChangeHandler(e) { this.setState({ [e.target.name]: e.target.value }); }
+
+    async onSubmitComment(e) {
         e.preventDefault();
-        const { jewel, rating, comment } = this.state;
+        const { jewel, rating, comment, jewelId } = this.state;
         
         if(comment === '' || comment === undefined || comment === null) {
             return toastr.warning('Textarea cannot must be empty!');
@@ -100,7 +165,34 @@ class PublicJewelDetails extends Component {
             author: localStorage.getItem('username')
         };
 
-        
+        try{
+            const res = await RequestComments.createComment(newComment);
+            if(res.error) {
+                return toastr.warning('Invalid Credential!You Login!');
+            }
+
+            this.state.comments.unshift(res);
+            toastr.success('The comment is posted Successful!');
+
+            const updateRatingToJewel = {
+                name: jewel.name,
+                owner: jewel.owner,
+                imageUrl: jewel.imageUrl,
+                gems: jewel.gems,
+                type: jewel.type,
+                raiting: Number(jewel.raiting) + Number(rating)
+            };
+
+            const updatedJewel = await RequestPublicJewels.editPublicJewel(jewelId, updateRatingToJewel);
+            if(updatedJewel.error) {
+                return toastr.warning('Invalid Credential!You Login!');
+            }
+
+            this.setState({ 
+                jewel: updatedJewel, 
+                rating: updatedJewel.raiting 
+            });
+        }catch(error) { console.log(error.message); }  
     }
 
     render () {
@@ -110,9 +202,13 @@ class PublicJewelDetails extends Component {
                 <h2>Public Jewel Section</h2>
 
                 {imageUrl === '' ? <Loading/> : <div className="inner-publicJewel-details">
-                    <button onClick={this.onDeleteJewel}>
+                    {auth.isLogged() && auth.isAdmin() && <Link to={`/publicJewels/publicJewelEdit/${jewel._id}`}>
+                        <FontAwesomeIcon icon="edit" size="3x" className="edit-icon"></FontAwesomeIcon>
+                    </Link>}
+                    {auth.isLogged() && auth.isAdmin() && <button onClick={this.onDeleteJewel}>
                         <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
-                    </button>
+                    </button>}
+                   
                     <div className="view-publicJewel">
 
                         <div className="jewel-model">
