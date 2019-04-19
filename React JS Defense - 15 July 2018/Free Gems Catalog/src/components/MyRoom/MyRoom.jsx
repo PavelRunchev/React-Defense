@@ -5,6 +5,11 @@ import MyJewelsList from './MyJewelsList/MyJewelsList';
 import MyGems from './MyGems/MyGems';
 import Preloader from '../HOC/Preloader';
 
+const Context = React.createContext([]);
+
+export const ContextProvider = Context.Provider;
+export const ContextConsumer = Context.Consumer;
+
 class MyRoomBase extends Component {
     constructor(props) {
         super(props);
@@ -15,13 +20,17 @@ class MyRoomBase extends Component {
     }
     
     render () {
-        console.log(this.state.myJewels);
+        const { myJewels } = this.state;
+
         return (
             <div className="container-fluid myRoom">
                 <h2>Your Private Room</h2>
                 <div className="inner-myRoom">
-                    <MyGems value={this.state.myJewels}/>
-                    <MyJewelsList url={this.props.match.url}/>
+                    <ContextProvider value={myJewels}>
+                        <MyGems myJewels={this.state.myJewels}/>
+                    </ContextProvider>
+                    
+                    <MyJewelsList url={this.props.match.url} myJewels={myJewels}/>
                 </div>
             </div>
         );

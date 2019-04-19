@@ -4,8 +4,9 @@
 .inner-myJewels {
     border: 2px solid #fff;
     border-radius: 0.4rem;
+    padding: 2%;
 
-    & > h3 { @include h2; }
+    & > h3 { @include h4; }
     & > .myJewels {
         display: flex;
         justify-content: space-around;
@@ -31,8 +32,9 @@
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
     .inner-myJewels {
+        & > h3 { font-size: 26px; }
         & > .myJewels {
             & > .publicJewel { width: 90%; }
         }
