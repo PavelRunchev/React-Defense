@@ -78,7 +78,7 @@ class GemDetails extends Component {
         || gem.color === '' || gem.color === undefined
         || gem.weight === '' || gem.weight === undefined
         || gem.origin === '' || gem.origin === undefined
-        || gem.set === '' || gem.set === undefined) {
+        || gem.type === '' || gem.type === undefined) {
             return toastr.warning('Cannot must be do this operation!');
         } 
 

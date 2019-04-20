@@ -1,0 +1,81 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+#accordion {
+    margin-top: 3rem;
+    background-color: rgba(0,0,0, 0.03);
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    padding: 2%;
+    & > .card {
+        background: none;
+        border: none;
+        & > .card-header {
+            position: relative;
+            background: none;
+            border: none;
+           
+            & > .view-profile {
+                font-size: 20px;
+                background: none;
+                border: none;
+                outline: none;
+                color: rgb(21,140,186);
+                font-weight: bold;
+                text-shadow: 1px 1px rgb(255,255,255);
+                border-bottom: 1px solid #fff;
+                &:hover {
+                    color: #fff;
+                    text-shadow: 1px 1px rgb(21,140,186);
+                }
+            }
+        }
+
+        & > .card-body {
+            width: 26rem;
+            margin: 2% auto;
+            border-radius: 0.5rem;
+            -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+            
+
+            & > h4 { @include h2; }
+            & > form {
+                width: 100%;
+                padding: 3% 1%;
+                & > div {
+                    width: 100%;
+                    margin: 6% 0;
+                    display: flex;
+                    justify-content: space-between;
+                    & > label { @include label; }
+                    & > input { @include input-field; width: 60%; }
+                }
+
+                & > .save-change { @include edit-button; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #accordion & > .card > .card-body { width: 97%; padding-bottom: 7%; }
+}
+
+@media screen and (max-width: 400px) {
+    #accordion & > .card > .card-body > form > .row { 
+        flex-direction: column;
+        & > label,
+        & > input { margin: 1% auto; }
+        & > input { width: 80%; }
+    }
+}
+
+@media screen and (max-width: 225px) {
+    #accordion & > .card > .card-body > form > .save-change { 
+        width: 80%;
+        font-size: 12px;
+        padding: 5% 2%;
+    }
+}

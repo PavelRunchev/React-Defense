@@ -12,7 +12,7 @@ const MyJewel = (props) => {
             <img src={myJewel.imageUrl} className="publicJewel-image" alt="gallery" />           
             <div className="card-text jewel-create-time">Created: {DateConvertor(myJewel._kmd.lmt)}</div>
             <div className="jewel-view">              
-                <Link to={`/publicJewels/publicJewelDetails/${myJewel._id}`}>Details</Link>
+                <Link to={`/myRoom/privateRoomSection/myJewelDetails/${myJewel._id}`}>Details</Link>
             </div>     
         </div>
     );

@@ -6,35 +6,43 @@
     border-radius: 0.4rem;
     padding: 2%;
 
-    & > h3 { @include h4; }
+    & > h3 { @include h4;  }
+    & > .buttonForViewMyJewels {
+        & > h3 { @include h3; margin: 2% auto; font-size: 24px; text-shadow: 1px 1px rgb(0,0,0); }
+        & > button { @include details-button; }
+    }
     & > .myJewels {
         display: flex;
-        justify-content: space-around;
-    }
-
-    & > .page-numbers {
-        display: inline-block; 
-        margin: 5% auto; 
-        width: 19%;
-        & > ul > li { margin: 0 3%; }
-        & > ul {
-            display: flex;
-            justify-content: center;
-        }
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .inner-myJewels {
-        & > .myJewels {
-            flex-wrap: wrap;
-        }
+        flex-wrap: wrap;
+        justify-content: center;
+        & > h4 { @include h4; margin: 3% auto; }
     }
 }
 
 @media screen and (max-width: 400px) {
     .inner-myJewels {
         & > h3 { font-size: 26px; }
+        & > .buttonForViewMyJewels {
+            & > button { margin-right: 0; }
+        }
+        & > .myJewels {
+            & > .publicJewel { width: 90%; }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .inner-myJewels {
+        overflow: hidden;
+        & > h3 { font-size: 20px; }
+        & > .buttonForViewMyJewels {
+            & > h3 { font-size: 20px; }
+            & > .viewMyJewels { 
+                margin-right: 0;
+                width: 100%;
+                padding: 5% 0; 
+            }
+        }
         & > .myJewels {
             & > .publicJewel { width: 90%; }
         }

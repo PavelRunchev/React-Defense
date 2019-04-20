@@ -20,3 +20,10 @@
         border-radius: 0.5rem;
     }
 }
+
+@media screen and (max-width: 200px) {
+    .myRoom {
+        overflow: hidden;
+        & > h2 { font-size: 20px; }
+    } 
+}

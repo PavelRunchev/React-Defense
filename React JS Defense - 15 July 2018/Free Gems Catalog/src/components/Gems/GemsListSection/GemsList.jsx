@@ -43,6 +43,9 @@ class GemsListBase extends React.Component {
         
         try{
             const findingGems = await RequestGems.searchGems(search);
+            if(findingGems.error) {
+                return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
+            }
 
             this.setState({ findingGems });
         }catch(err) { toastr.danger(err.message); }

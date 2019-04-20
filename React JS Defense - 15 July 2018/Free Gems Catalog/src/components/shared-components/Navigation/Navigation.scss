@@ -139,11 +139,22 @@ nav {
 
 @media screen and (max-width: 180px) {
     nav {
+        overflow: hidden;
         & .logo-navigation { margin: 0; width: 100%; }
+        & > .navbar-toggler { width: 100%; }
         & .navbar-brand {
             font-size: 12px;
             padding-left: 0;
             padding-right: 0;
+        }
+
+        & > .logged-user-show {
+            width: 100%;
+            & > p { font-size: 14px; }
+            & > p > span {
+                width: 100%;
+                font-size: 14px;
+            }
         }
     }
 }

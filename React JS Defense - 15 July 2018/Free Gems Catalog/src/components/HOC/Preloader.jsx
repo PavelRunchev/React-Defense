@@ -3,7 +3,6 @@ import Loading from '../Loading/Loading';
 import RequestGems from '../../utils/RequestGems';
 import RequestPublicJewels from '../../utils/RequestPublicJewels';
 import RequestJewels from '../../utils/RequestJewels';
-import RequestMyJewels from '../../utils/RequestMyJewels';
 import toastr from 'toastr';
 
 export default function Preloader(WrappedComponent) {
@@ -51,19 +50,7 @@ export default function Preloader(WrappedComponent) {
 
                     this.setState({ ready: true, data });
                 }).catch(error => console.log(error));;
-            }  else if(this.props.match.url === '/myRoom/privateRoomSection') {
-                const user = localStorage.getItem('username');
-                if(user !== null) {
-                    RequestMyJewels.allMyJewels(user)
-                        .then(data => {
-                            if(data.error === 'InvalidCredentials') {
-                                return toastr.error('No Authentication! Try again sign in!');
-                            }
-
-                            this.setState({ ready: true, data });
-                        }).catch(error => console.log(error));;
-                }  
-            }     
+            }
         }
 
         handleClick(e) {

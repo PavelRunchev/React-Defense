@@ -14,7 +14,7 @@
         & > .gems-bracelet {
             width: 100%;
             & > h3 { font-weight: bold; color: #fff; text-shadow: 2px 2px 1px rgb(0,0,0); }
-            & > h4 { text-shadow: 2px 2px rgb(0,0,0); color: #fff; }
+            & > h4 { text-shadow: 1px 1px rgb(0,0,0); color: goldenrod; }
 
             & > .gems-ring-list,
             & > .gems-pendant-list,
@@ -30,6 +30,20 @@
 
 @media screen and (max-width: 400px) {
     .myGemsList {
-        & > h2 { font-size: 26px; }
+        & > h2 { font-size: 20px; }
+        & > .container-gems {
+            & > .gems-ring,
+            & > .gems-pendant,
+            & > .gems-bracelet {
+                & > h3 { font-size: 18px; }
+                & > h4 { font-size: 18px; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .myGemsList {
+        overflow: hidden;
     }
 }

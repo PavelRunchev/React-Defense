@@ -15,7 +15,7 @@ let RequestMyJewels = {
         });
     },
 
-    allMyJewels: (user) => {
+    getMyJewels: (user) => {
         return fetch(`${HostUrl}/appdata/${AppKey}/myJewelryStore?query={"owner":"${user}"}&sort={"_kmd.ect": -1}`, {
             method: 'GET',
             headers: {

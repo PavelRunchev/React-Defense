@@ -37,3 +37,24 @@
          }
     }
 }
+
+@media screen and (max-width: 200px) {
+    .upgrade-form {
+        & > h3 { font-size: 20px; }
+        & > h4 { font-size: 16px; }
+        & > form > .form-group {
+            flex-direction: column;
+            & > select { margin: 5% auto; width: 100%; }
+            & > .gems-upgrade-btn { 
+                margin: 5% auto; 
+                padding: 5% 0; 
+                width: 100%; }
+         }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .upgrade-form {
+        & > h3 { font-size: 16px; }
+    }
+}

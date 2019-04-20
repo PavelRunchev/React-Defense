@@ -1,0 +1,67 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+.myJewel-details {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 3%;
+
+    & > h2 { @include h2; }
+
+    & > .inner-myJewel-details {
+        @include inner-details-template;
+        width: 70rem;
+        height: auto;
+        display: block;
+        padding-bottom: 6%;
+        & > .myJewel-remove {
+            @include trash-button;
+            font-size: 30px;
+        }
+
+        & > .myJewel-form {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            & > .picture-jewel {
+                width: 30%;
+                & > img { 
+                    cursor: pointer;
+                    width: 100%; 
+                    margin-top: 10%;
+                    border-radius: 0.3rem;
+                    border: 2px solid rgba(21,140,186,1);
+                    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    padding: 5px;
+                    opacity: 0;
+                    animation: visible 2s 0.3s linear forwards;
+    
+                    &:active { transform: scale(1.5); } 
+                }
+            }
+
+            & > .myJewel-info {
+                margin-top: 5%;
+                text-align: center;
+                & > h3 { 
+                    color: #fff;
+                    text-shadow: 1px 1px rgb(0,0,0);
+                    margin-bottom: 10%;
+                }
+                & > .text > p {
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: left;
+                    
+                    & > span {
+                        color: #fff;
+                        text-shadow: 1px 1px rgb(0,0,0);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -32,6 +32,7 @@ const EditJewel = React.lazy(() => import('./components/Jewels/EditJewel/EditJew
 
 //MyRoom Components
 const MyRoom = React.lazy(() => import('./components/MyRoom/MyRoom'));
+const MyJewelDetails = React.lazy(() => import('./components/MyRoom/MyJewelDetails/MyJewelDetails'));
 
 //UserOptions Component
 const AdminOptions = React.lazy(() => import('./components/AdminOptions/AdminOptions'));
@@ -68,6 +69,7 @@ const AppRouter = () => (
             <Route exact path="/jewels/editJewel/:id" render={() => auth.isLogged() && auth.isAdmin() ? <EditJewel/> : <Home/>}/>
 
             <Route exact path="/myRoom/privateRoomSection" render={() => auth.isLogged() ? <MyRoom/> : <Home/>}/>
+            <Route exact path="/myRoom/privateRoomSection/myJewelDetails/:id" render={() => auth.isLogged ? <MyJewelDetails/> : <Home/>} />
 
             <Route exact path="/admin/adminOptions" render={() => auth.isLogged() ? <AdminOptions/> : <Home/>}/>
             <Route exact path="/adminOptions/edit-user/:id" render={() => auth.isLogged() ? <EditUser/> : <Home/>}/>
