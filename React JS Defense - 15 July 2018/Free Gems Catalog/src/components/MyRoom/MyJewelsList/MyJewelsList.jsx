@@ -4,6 +4,7 @@ import MyJewel from '../Model/MyJewel';
 
 const MyJewelsList = (props) => {
     let myJewelsRender;
+
     //sort by create date!
     if(props.data !== undefined) {
         const data = props.data.sort((a,b) => b._kmd.lmt.localeCompare(a._kmd.lmt));
@@ -19,10 +20,9 @@ const MyJewelsList = (props) => {
         <div className="inner-myJewels">
             <h3 className="h2">Your Jewels</h3>
             <div className="buttonForViewMyJewels">
-                <h3>Click to view your jewels!</h3>
                 <button onClick={props.handler} className="viewMyJewels">View Jewels</button>
             </div>
-            {myJewelsRender}
+            {!props.value ? <h3>No click for your Jewels!</h3> : myJewelsRender}
         </div>
     );
 };

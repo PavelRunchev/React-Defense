@@ -10,9 +10,9 @@ const CommentForm = (props) => {
             {props.handler.length === 0 ? '' : 
                 <Fragment>
                     <form onSubmit={onSubmitComment}>
-                        <p className="font-weight-bold">Give rating and comment for this jewel.</p>
+                        <p className="font-weight-bold text-light">Give rating and comment for this jewel.</p>
                         <div className="form-group">
-                            <label htmlFor="exampleSelect2">Rating:</label>
+                            <label htmlFor="exampleSelect2" className="text-light">Rating:</label>
                             <select name="rating" onChange={onChangeHandler} className="form-control" id="exampleSelect2">
                                 <option>0</option>
                                 <option>1</option>

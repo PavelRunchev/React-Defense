@@ -31,6 +31,7 @@ class Navigation extends Component {
         const username = localStorage.getItem('username');
         const isAdmin = auth.isAdmin();
         const isLogged = auth.isLogged();
+        const isModerator = auth.isModerator();
       
         return (
             <nav className="navbar navbar-expand-lg navbar-dark">
@@ -42,7 +43,7 @@ class Navigation extends Component {
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav">
-                        {isLogged && <Dropdown isAdmin={isAdmin} loggedUser={isLogged}/>}
+                        {isLogged && <Dropdown isAdmin={isAdmin} isModerator={isModerator} loggedUser={isLogged}/>}
 
                         <li className="nav-item">
                             <NavLink className="nav-link" exact to="/">Home</NavLink>
@@ -57,6 +58,9 @@ class Navigation extends Component {
 
                     {isAdmin && isLogged && <div className="seen-only-by-admin">
                         <h4>You have administrative rights!</h4>
+                    </div>}
+                    {isModerator && isLogged && <div className="seen-only-by-moderator">
+                        <h4>You have moderate rights!</h4>
                     </div>}
                 </div>
                

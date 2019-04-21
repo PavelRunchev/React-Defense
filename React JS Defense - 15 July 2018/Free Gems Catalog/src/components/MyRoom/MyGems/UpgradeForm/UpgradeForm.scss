@@ -5,7 +5,7 @@
     width: 38rem;
     margin: 2% auto;
     & > h3 { @include h4; }
-    & > h4 { @include h3; }
+    & > h4 { @include h2; }
 
     & > form {
         width: 100%;

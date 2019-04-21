@@ -5,7 +5,7 @@ import './MyGem.scss';
 const MyGem = (props) => {
     return (
         <div className="myGem">
-            <Link to={`/myRoom/privateRoomSection/detailsMyGem/${props.props._id}`}>
+            <Link to={`/myRoom/privateRoomSection/myGemDetails/${props.props._id}`}>
                 <div className="card-title gem-name">Name: {props.props.gemsName}</div>
                 <div className="gem-set">For Set: {props.props.type}</div>
                 <img src={props.props.imageUrl} className="gem-image" alt="gallery" />           

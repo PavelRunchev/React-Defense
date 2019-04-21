@@ -63,6 +63,10 @@ class CreateGem extends Component {
             return toastr.warning('Color must be only lowercase!');
         }
 
+        if(color[0] !== color[0].toUpperCase()) {
+            return toastr.warning('Color start with a capital letter!');
+        }
+
         /*
         / Weight verification
         */

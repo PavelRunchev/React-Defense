@@ -45,7 +45,8 @@ nav {
             }
         }
 
-        & > .seen-only-by-admin {
+        & > .seen-only-by-admin,
+        & > .seen-only-by-moderator {
             width: 23rem;
             display: block;
             margin: 0 auto;
@@ -100,7 +101,6 @@ nav {
             width: 17%;
             & > .navbar-nav { margin: 0; }
             & > .seen-only-by-admin { margin: 0; }
-            
         }
 
         & > .logged-user-show { width: 15rem; }

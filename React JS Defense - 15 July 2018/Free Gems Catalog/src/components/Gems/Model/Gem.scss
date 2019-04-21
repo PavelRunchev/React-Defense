@@ -41,7 +41,7 @@
 
         & > .edit-button { 
             @include edit-button;
-            padding-right: 1rem;
+            margin-right: 1rem;
         }
         & > .details-button { @include details-button; }
     }

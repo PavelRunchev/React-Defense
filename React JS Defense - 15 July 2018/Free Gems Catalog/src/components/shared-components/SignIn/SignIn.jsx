@@ -3,6 +3,7 @@ import './SignIn.scss';
 import { Link, withRouter } from 'react-router-dom';
 import RequestUser from '../.././../utils/RequestUser';
 import toastr from 'toastr';
+import auth from '../../../utils/Auth';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -59,13 +60,20 @@ class SignIn extends Component {
             localStorage.setItem('id', res._id);
             localStorage.setItem('username', res.username);
             if(res._kmd.roles !== undefined) {
-                localStorage.setItem('isAdmin', res._kmd.roles[0].roleId);
+                if(res._kmd.roles[0].roleId === auth.adminId) {
+                    localStorage.setItem('isAdmin', res._kmd.roles[0].roleId);
+                    auth.roleId = res._kmd.roles[0].roleId;
+                }
+
+                if(res._kmd.roles[0].roleId === auth.moderatorId) {
+                    localStorage.setItem('isModerator', res._kmd.roles[0].roleId);
+                    auth.roleId = res._kmd.roles[0].roleId;
+                }
             }
 
+            auth.authtoken = res._kmd.authtoken;
             this.props.history.push('/home');
-        } catch (error) {
-            console.log(error.message);
-        }
+        } catch (error) { console.log(error.message); }
     }
 
     render () {

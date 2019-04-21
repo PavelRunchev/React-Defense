@@ -5,7 +5,7 @@
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 2% 0 4% 0;
+    padding: 1% 0 4% 0;
 
     & > h2 { @include h2; padding-bottom: 0; }
     & > h4 { @include h4; color: rgb(218,165,32);}
@@ -16,11 +16,17 @@
         background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(218,165,32,0.2) 65%);
         border: 2px solid goldenrod;
         width: 63rem;
+        overflow: hidden;
 
         & > .image-view {
+            
             width: 40%;
             & > h3 { margin-top: 50%; color: goldenrod; }
-            & > img { width: 100%; height: 496px; }
+            & > img { 
+                width: 100%; 
+                height: 496px; 
+                overflow: hidden;
+            }
         }
 
         & > .edit-form {

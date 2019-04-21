@@ -1,0 +1,139 @@
+@import '../../../sass/mixins';
+@import '../../../sass/animations';
+
+.details-myGem {
+    background-image: url('../../../image/gemstone-crystal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5% 1%;
+
+    & > h2 { @include h2; margin-bottom: 2%; }
+    & > .inner-myDetailsGem {
+        @include inner-details-template;
+        width: 70rem;
+        height: auto;
+        display: block;
+        padding-bottom: 10%;
+
+        & > .myGem-remove {
+            @include trash-button;
+            font-size: 30px;
+        }
+
+        & > .myGem-form {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            & > .picture-gem {
+                width: 30%;
+                & > img { 
+                    cursor: pointer;
+                    width: 100%; 
+                    margin-top: 10%;
+                    border-radius: 0.3rem;
+                    border: 2px solid rgba(21,140,186,1);
+                    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+                    padding: 5px;
+                    opacity: 0;
+                    animation: visible 2s 0.3s linear forwards;
+    
+                    &:active { transform: scale(1.5); } 
+                }
+            }
+
+            & > .myGem-info {
+                margin-top: 4%;
+                text-align: center;
+                & > h3 { 
+                    color: #fff;
+                    text-shadow: 1px 1px rgb(0,0,0);
+                    margin-bottom: 10%;
+                }
+                & > .text > p {
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: left;
+                    
+                    & > span {
+                        color: #fff;
+                        text-shadow: 1px 1px rgb(0,0,0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .details-myGem > .inner-myDetailsGem { 
+        width: 94%; 
+        & > .myGem-form {
+            & > .picture-gem {
+                width: 20rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .details-myGem > .inner-myDetailsGem { 
+        width: 94%; 
+        & > .myGem-form {
+            & > .picture-gem {
+                width: 38%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .details-myGem > .inner-myDetailsGem { 
+        width: 94%; 
+        & > .myGem-remove { margin-top: 4%; }
+        & > .myGem-form {
+            & > .myGem-info {
+                & > h3 { font-size: 22px; }
+                & > .text > p { font-size: 16px; }
+                & > div > p > span {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .details-myGem > .inner-myDetailsGem {  
+        & > .myGem-form {
+            flex-direction: column;
+            & > .picture-gem,
+            & > .myGem-info {
+                width: 16rem;
+                margin: 2% auto;
+            }
+
+            & > .myGem-info > .text { padding-left: 30%; }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .details-myGem {
+        & > h2 { font-size: 24px; margin-bottom: 5%; }
+        & > .inner-myDetailsGem {  
+            & > .myGem-form {
+                flex-direction: column;
+                & > .picture-gem,
+                & > .myGem-info { 
+                    width: 93%;
+                    & > h3 { font-size: 18px; }
+                }
+
+                & > .myGem-info > .text { padding-left: 15%; }
+            }
+        }
+    }
+}

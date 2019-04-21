@@ -24,6 +24,17 @@ let RequestPublicJewels = {
         });
     },
 
+    getJewelsForUser: (user) => {
+        return fetch(`${HostUrl}/appdata/${AppKey}/myJewelryStore?query={"owner":"${user}"}&sort={"_kmd.ect": -1}`, {
+            method: 'GET',
+            headers: {
+                Authorization: 'Kinvey ' + localStorage.getItem('authtoken')
+            }
+        }).then(res => {
+            return res.json();
+        });
+    },
+
     editPublicJewel: (id, jewel) => {
         return fetch(`${HostUrl}/appdata/${AppKey}/myJewelryStore/${id}`, {
             method: 'PUT',

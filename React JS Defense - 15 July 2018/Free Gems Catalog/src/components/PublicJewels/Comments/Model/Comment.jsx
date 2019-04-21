@@ -6,7 +6,7 @@ import auth from '../../../../utils/Auth';
 
 const Comment = (props) => {
     const comment = props.props;
-    const ownerComment = localStorage.getItem('username') === comment.owner;
+    const ownerComment = localStorage.getItem('username') === comment.author;
 
     return (
         <Fragment>
@@ -16,6 +16,7 @@ const Comment = (props) => {
                     <p><span>comment:</span> {comment.comment}</p>
                     <p>posted <span>{DateConvertor(comment._kmd.ect)}</span> by <span>{comment.author}</span> 
                         {((auth.isLogged() && auth.isAdmin()) 
+                        || (auth.isLogged() && auth.isModerator())
                         || (ownerComment && auth.isLogged())) 
                         && <button onClick={() => props.handler(comment._id)} className="deleteLink">delete</button>}
                     </p>

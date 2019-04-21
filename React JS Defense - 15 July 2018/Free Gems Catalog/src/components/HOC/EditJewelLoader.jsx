@@ -3,6 +3,7 @@ import Loading from '../Loading/Loading';
 import RequestPublicJewels from '../../utils/RequestPublicJewels';
 import RequestJewels from '../../utils/RequestJewels';
 import toastr from 'toastr';
+import swal from 'sweetalert';
 
 export default function EditJewelLoader(WrappedComponent) {
     return class extends React.Component {
@@ -22,6 +23,7 @@ export default function EditJewelLoader(WrappedComponent) {
 
             this.onChangeHandler = this.onChangeHandler.bind(this);
             this.onSubmit = this.onSubmit.bind(this);
+            this.onDelete = this.onDelete.bind(this);
         }
 
         async componentDidMount() {
@@ -30,7 +32,7 @@ export default function EditJewelLoader(WrappedComponent) {
                     const id = this.props.match.params.id;
                     const jewel = await RequestPublicJewels.getJewelById(id);                   
                     if(jewel.error === 'InvalidCredentials') {
-                        return toastr.error('No Authentication! Try Again Sign In!');
+                        return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
                     }
     
                     this.setState({ ready: true, jewel });
@@ -40,7 +42,7 @@ export default function EditJewelLoader(WrappedComponent) {
                     const id = this.props.match.params.id;
                     const jewel = await RequestJewels.getJewelById(id);
                     if(jewel.error) {
-                        return toastr.error('No Authentication! Try again sign in!');
+                        return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
                     }
 
                     this.setState({ ready: true, jewel });
@@ -136,7 +138,7 @@ export default function EditJewelLoader(WrappedComponent) {
             /*
             / Rating verification
             */
-            if(Number(rating) <= 0) {
+            if(Number(rating) < 0) {
                 return toastr.warning('Weight must be positive number!');
             }
 
@@ -147,7 +149,7 @@ export default function EditJewelLoader(WrappedComponent) {
                     try{
                         const res = await RequestJewels.editJewel(jewelId, editJewel);
                         if(res.error) {
-                            return toastr.error('Invalid Credential!You Login!');
+                            return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
                         }
     
                         toastr.success('The public jewel is edited Successful!');
@@ -170,11 +172,38 @@ export default function EditJewelLoader(WrappedComponent) {
             }
         }
 
+        async onDelete(e) {
+            e.preventDefault();
+            const jewelId = this.props.match.params.id;
+
+            if(jewelId !== undefined) {
+                const willDelete = await swal({
+                    title: 'Are you sure want to delete the Jewel?',
+                    text: 'It will be deleted permanently from base?',
+                    icon: 'warning',
+                    dangerMode: true,
+                    showCancelButton: true,
+                });
+                if (willDelete) {
+                    try {
+                        const res = await RequestJewels.removeJewel(jewelId);
+                        if(res.error) {
+                            return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
+                        }
+    
+                        toastr.success('Your jewel is deleted successful!');
+                        swal({ title: 'Your jewel is deleted successful!', icon: 'success' });
+                        this.props.history.push('/jewels/allJewels/listFromJewels');
+                    }catch(error) { console.log(error.message); }
+                }                   
+            }
+        }
+
         render() {
             const { jewel } = this.state;
 
             if(this.state.ready) {
-                return <WrappedComponent {...this.props} data={jewel} handler={[this.onChangeHandler, this.onSubmit]}/>;
+                return <WrappedComponent {...this.props} data={jewel} handler={[this.onChangeHandler, this.onSubmit, this.onDelete]}/>;
             }
 
             return <Loading/>;

@@ -12,12 +12,17 @@
 
     & > .inner-create {
         @include form-template;
-        
+        overflow: hidden;
 
         & > .image-view {
+            overflow: hidden;
             @include image-View;
             & h3 { @include h4; margin-top: 50%; }
-            & > img { width: 100%; height: 596px; }
+            & > img { 
+                width: 100%; 
+                height: 596px;
+                overflow: hidden;
+            }
         }
 
         & > .create-form {

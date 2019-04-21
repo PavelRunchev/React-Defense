@@ -7,6 +7,7 @@ class Dropdown extends Component {
     render () {
         const isAdmin = this.props['isAdmin'];
         const loggedUser = this.props['loggedUser'];
+        const isModerator = this.props['isModerator'];
         return (
             <li className="nav-item dropdown">
                 <NavLink className="nav-link dropdown-toggle" to="#">Dropdown</NavLink>
@@ -38,6 +39,7 @@ class Dropdown extends Component {
                     </li>
                     <li>
                         {isAdmin && loggedUser && <NavLink to="/admin/adminOptions">Admin Options</NavLink>}
+                        {isModerator && loggedUser && <NavLink to="/admin/adminOptions">Admin Options</NavLink>}
                     </li>                    
                 </ul>
             </li>

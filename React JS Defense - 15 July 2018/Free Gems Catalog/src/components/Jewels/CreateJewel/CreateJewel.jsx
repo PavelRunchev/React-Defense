@@ -86,7 +86,7 @@ class CreateJewel extends Component {
             const newJewel = {name, type, gems, imageUrl };
             const res = await RequestJewels.createJewel(newJewel);
             if(res.error) {
-                return toastr.error('Invalid Credential!You Login!');
+                return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
             }
     
             toastr.success('The jewel is created successful!');

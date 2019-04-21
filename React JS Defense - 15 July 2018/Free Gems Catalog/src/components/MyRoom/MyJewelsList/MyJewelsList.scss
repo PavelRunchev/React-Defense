@@ -5,8 +5,9 @@
     border: 2px solid #fff;
     border-radius: 0.4rem;
     padding: 2%;
+    background-color: rgba(0,0,0, 0.3);
 
-    & > h3 { @include h4;  }
+    & > h3 { @include h2;  }
     & > .buttonForViewMyJewels {
         & > h3 { @include h3; margin: 2% auto; font-size: 24px; text-shadow: 1px 1px rgb(0,0,0); }
         & > button { @include details-button; }

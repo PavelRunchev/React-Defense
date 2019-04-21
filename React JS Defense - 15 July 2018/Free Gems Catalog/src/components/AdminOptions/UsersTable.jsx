@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './UsersTable.scss';
 import { withRouter } from 'react-router-dom';
 import User from './Model/User';
@@ -6,7 +6,7 @@ import User from './Model/User';
 class UsersTable extends Component {
    
     render() {
-        const userList = this.props.data;
+        const userList = this.props.data.sort((a,b) => a.username.localeCompare(b.username));
         let renderUser = [];
         if(userList.length) {
             renderUser = userList.map((u, i) => {
@@ -16,26 +16,28 @@ class UsersTable extends Component {
         }
 
         return (
-            <table className="table table-hover table-responsive-l">
-                <thead className="table-dark">
-                    <tr>
-                        <th>N</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>FirstName</th>
-                        <th>LastName</th>
-                        <th>Created</th>
-                        <th>Role</th>                       
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderUser}
-                </tbody>
-                <tfoot>
-
-                </tfoot>
-            </table>
+            <Fragment>
+                <table className="table table-hover table-responsive-l">
+                    <thead className="table-dark">
+                        <tr>
+                            <th>N</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Created</th>
+                            <th>Role</th>                       
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {renderUser}
+                    </tbody>
+                </table>
+                <div className="total-users">
+                    <p>Total Users: {renderUser.length}</p>
+                </div>
+            </Fragment>
         );
     }
 }

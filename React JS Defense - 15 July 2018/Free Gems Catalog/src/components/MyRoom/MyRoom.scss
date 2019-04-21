@@ -18,12 +18,45 @@
         padding: 2%;
         border: 2px solid rgb(21,140,186);
         border-radius: 0.5rem;
+
+        & > .congratulation {
+            border: 2px solid #fff;
+            border-radius: 0.5rem;
+            padding: 2%;
+            margin-bottom: 3%;
+            & > h3 { @include h2; color: goldenrod; }
+            & > h4 { @include h2; }
+        }
     }
 }
 
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 300px) {
+    .myRoom {
+        & > .inner-myRoom > .congratulation {
+            & > h3 { font-size: 22px; }
+            & > h4 { font-size: 18px; }
+        }
+    } 
+}
+
+@media screen and (max-width: 215px) {
     .myRoom {
         overflow: hidden;
         & > h2 { font-size: 20px; }
+
+        & > .inner-myRoom > .congratulation {
+            overflow: hidden;
+            & > h3 { font-size: 18px; }
+            & > h4 { font-size: 14px; }
+        }
+    } 
+}
+
+@media screen and (max-width: 175px) {
+    .myRoom {
+        & > .inner-myRoom > .congratulation {
+            & > h3 { font-size: 14px; }
+            & > h4 { font-size: 10px; }
+        }
     } 
 }

@@ -3,8 +3,9 @@
 
 .publicJewel {
     @include model;
-    width: 17rem;
+    width: 20rem;
     margin: 3%;
+   
 
     & > .jewel-rating,
     & > .jewel-name,

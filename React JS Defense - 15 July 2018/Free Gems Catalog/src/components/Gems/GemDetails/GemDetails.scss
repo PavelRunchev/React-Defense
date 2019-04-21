@@ -15,7 +15,7 @@
         & > .image-name {
             width: 35%;
             padding-left: 5%;
-            & > h4 { @include h4; padding-bottom: 3rem; }
+            & > h4 { @include h2; padding-bottom: 3rem; }
             & > img { 
                 cursor: pointer;
                 width: 100%; 
@@ -38,14 +38,14 @@
             text-align: center;
 
             & > button { @include trash-button; }
-            & > h4 { @include h4; padding-bottom: 3rem; }
+            & > h4 { @include h2; padding-bottom: 3rem; }
     
             & > .inner-text { 
                 text-align: left; 
                 display: block;
                 margin: 0 auto;
                 width: 9rem;
-                & > p { font-weight: bold; font-size: 18px; }
+                & > p { font-weight: bold; font-size: 18px; color: #fff; text-shadow: 1px 1px rgb(0,0,0); }
             }
 
             & > span {
@@ -68,7 +68,12 @@
                 }
             }
 
-            & .info-take { width: 100%; padding-top: 1rem; }
+            & .info-take { 
+                width: 100%; 
+                padding-top: 1rem; 
+                color: #fff; 
+                text-shadow: 1px 1px rgb(0,0,0); 
+            }
         }
     }
 }

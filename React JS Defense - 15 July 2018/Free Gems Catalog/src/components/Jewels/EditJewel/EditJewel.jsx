@@ -22,7 +22,7 @@ class EditJewelBase extends Component {
                     </div>
                     <div className="edit-form">
                             
-                        <button onClick={this.onDeleteJewel}>
+                        <button onClick={this.props.handler[2]}>
                             <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
                         </button>
                             

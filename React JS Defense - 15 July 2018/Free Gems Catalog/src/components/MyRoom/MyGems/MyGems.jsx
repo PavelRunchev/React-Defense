@@ -129,7 +129,6 @@ class MyGems extends Component {
                     return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
                 }
     
-                console.log(resJewel);
                 //destroy 3 Gems from this set
                 for (let index = 0; index < 3; index++) {
                     const id = gemsForDelete[index]._id;

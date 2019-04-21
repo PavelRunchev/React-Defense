@@ -3,6 +3,7 @@ import './MyRoom.scss';
 import { withRouter } from 'react-router-dom';
 import RequestUser from '../../utils/RequestUser';
 import RequestMyJewels from '../../utils/RequestMyJewels';
+import RequestJewels from '../../utils/RequestJewels';
 import MyJewelsList from './MyJewelsList/MyJewelsList';
 import MyGems from './MyGems/MyGems';
 import MyProfile from './MyProfile/MyProfile';
@@ -19,8 +20,10 @@ class MyRoom extends Component {
         super(props);
 
         this.state = {
-            myJewels: this.props.data,
-            myProfile: {}
+            myJewels: [],
+            myProfile: {},
+            allJewels: [],
+            clickForMyJewels: false
         };
 
         this.onViewMyJewels = this.onViewMyJewels.bind(this);
@@ -32,7 +35,12 @@ class MyRoom extends Component {
             return toastr.error('No you are Authorization!');
         }
 
-        this.setState({ myProfile });
+        const allJewels = await RequestJewels.allJewels();
+        if(allJewels.error) {
+            return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
+        }
+
+        this.setState({ myProfile, allJewels });
     }
 
     async onViewMyJewels(e) {
@@ -49,19 +57,28 @@ class MyRoom extends Component {
                 return toastr.error('This operation is denied, invalid credentils! Please, sign in system for access!');
             }
     
-            this.setState({ myJewels });    
+            this.setState({ 
+                myJewels,
+                clickForMyJewels: true
+            });    
         }catch(error) { console.log(error.message); }
     }
 
     render () {
-        const { myJewels, myProfile } = this.state;
+        const { myJewels, myProfile, allJewels, clickForMyJewels } = this.state;
 
         return (
             <div className="container-fluid myRoom">
                 <h2>Your Private Room</h2>
-                <div className="inner-myRoom">                  
+                <div className="inner-myRoom">  
+                    {!myJewels.length ? '' : myJewels.length >= allJewels.length ? 
+                        <div className="congratulation">
+                            <h3>Congratulation!</h3>
+                            <h4>You collected all Jewels!</h4>
+                        </div> : ''
+                    }                
                     <MyGems/>
-                    <MyJewelsList data={myJewels} handler={this.onViewMyJewels}/>
+                    <MyJewelsList data={myJewels} handler={this.onViewMyJewels} value={clickForMyJewels}/>}
                     {myProfile === {} ? <Loading/> : <MyProfile data={myProfile}/>}
                 </div>               
             </div>
