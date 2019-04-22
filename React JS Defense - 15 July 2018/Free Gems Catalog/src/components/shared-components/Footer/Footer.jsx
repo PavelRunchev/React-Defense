@@ -147,8 +147,8 @@ class Footer extends Component {
                     </div>
 
                     <div className="copyright">
-                        <div className="text-left">&copy; 2019 Free Gems Catalog</div>
-                        <div className="text-left">All Rights Reserved!</div>
+                        <div>&copy; 2019 Free Gems Catalog</div>
+                        <div>All Rights Reserved!</div>
                         <div className="temperature">
                             {temp === 0 ? '' : 
                                 <span className="font-weight-bold">Sofia:

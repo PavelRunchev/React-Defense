@@ -101,6 +101,10 @@ nav {
             width: 17%;
             & > .navbar-nav { margin: 0; }
             & > .seen-only-by-admin { margin: 0; }
+            & > .seen-only-by-moderator {
+                margin-right: auto;
+                & > h4 { font-size: 16px; }
+            }
         }
 
         & > .logged-user-show { width: 15rem; }
@@ -112,6 +116,12 @@ nav {
         & #navbarColor01 {
             width: 17%;
             & > .navbar-nav { margin-right: 1%; } 
+            & > .seen-only-by-admin { margin: 0; }
+            & > .seen-only-by-moderator {
+                width: 100%;
+                margin: 0;
+                & > h4 { font-size: 16px; }
+            }
         }
        & > .logged-user-show {
            width: 13.5rem;

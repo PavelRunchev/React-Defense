@@ -96,3 +96,23 @@
        & > h3 { font-size: 20px; }
     }
 }
+
+@media screen and (max-width: 300px) {
+    #home {
+       & > h2 { font-size: 16px; }
+       & > h3 { font-size: 16px; }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    #home {
+        overflow: hidden;
+        & > .inner-home { 
+            overflow: hidden;
+            & > article > h3 { font-size: 14px; }
+            & > article > p { font-size: 8px; }
+        }
+        & > h2 { font-size: 12px; }
+        & > h3 { font-size: 12px; }
+    }
+}

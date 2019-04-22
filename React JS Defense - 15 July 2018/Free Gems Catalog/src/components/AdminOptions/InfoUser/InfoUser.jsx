@@ -103,7 +103,7 @@ class InfoUser extends Component {
         const { user, userGems, userJewels } = this.state;
        
         return (
-            <div className="container-fluid edit-user">
+            <div className="container-fluid info-user">
                 <h2>Info User Section</h2>
                 {user === undefined ? <Loading/> : 
                     <div className="inner-info-user">

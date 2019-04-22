@@ -60,7 +60,7 @@ class MyRoom extends Component {
             this.setState({ 
                 myJewels,
                 clickForMyJewels: true
-            });    
+            });   
         }catch(error) { console.log(error.message); }
     }
 
@@ -76,9 +76,11 @@ class MyRoom extends Component {
                             <h3>Congratulation!</h3>
                             <h4>You collected all Jewels!</h4>
                         </div> : ''
-                    }                
-                    <MyGems/>
-                    <MyJewelsList data={myJewels} handler={this.onViewMyJewels} value={clickForMyJewels}/>}
+                    }    
+                    <ContextProvider value={myJewels}>           
+                        <MyGems/>
+                        <MyJewelsList data={myJewels} handler={this.onViewMyJewels} value={clickForMyJewels}/>
+                    </ContextProvider> 
                     {myProfile === {} ? <Loading/> : <MyProfile data={myProfile}/>}
                 </div>               
             </div>

@@ -180,83 +180,118 @@
     }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 420px) {
     .footer {
         & > .services {
-            flex-wrap: wrap;
-            & > .contacts,
-            & > .links,
             & > .connect,
             & > .copyright {
-                width: 97%;
                 & > h5,
                 & > div,
-                & > p {
-                    width: 90%;
+                & > div > span,
+                & > p { text-align: center; }
+
+                & > .live-time {
+                    display: flex;
+                    justify-content: center;
                 }
+            }
+
+            & .contacts,
+            & .links,
+            & .connect,
+            & .copyright { width: 100%; }
+
+            & > .contacts > div {
+                width: 15rem;
             }
         }
     }
 }
 
-@media screen and (max-width: 271px) {
+@media screen and (max-width: 300px) {
     .footer {
-        & .services .contacts div span,
-        .services .links ul > li > a,
-        .services .copyright div { font-size: 14px; }
-        & .footer-bottom .text-center { font-size: 16px; }
+        & > .services {
+            & > .contacts { 
+                & > div {
+                    width: 100%;
+                    padding-left: 1rem;
+                    & > span { font-size: 14px; }
+                } 
+            }
+
+            & .links > div > ul > li > a { font-size: 14px; }
+            & .connect {
+                width: 100%;
+                & > .icons {
+                    flex-direction: column;
+                    & > svg { margin: 4% auto; }
+                }
+                & > div > span { font-size: 14px; }
+            }
+            & .copyright { 
+                width: 100%; 
+                margin-bottom: 10%;
+                & > div { font-size: 14px; }
+                & > .live-time > .time,
+                & > .live-time .clock { font-size: 16px; }
+            }
+        }
+
+        & > .footer-bottom > div { font-size: 12px; }
     }
 }
 
-@media screen and (max-width: 213px) {
+@media screen and (max-width: 230px) {
     .footer {
-        overflow: hidden;
-        & .services .contacts div span,
-        .services .links ul > li > a,
-        .services .copyright div { font-size: 10px; }
-        & .footer-bottom .text-center { font-size: 14px; }
         & > .services {
-            & > .contacts {
-                & > h5, 
-                & > div { margin: 0;
-                    width: 100%;
-                    overflow: hidden;
-                    & > .email { 
-                        width: 100%; 
-                        font-size: 8px;
-                    }
-                }
-            }
+            & .links > div > ul > li > a { font-size: 12px; }
+        }
+    }
+}
 
-            & > .connect {
-                & > .icons {
-                    display: flex;
-                    flex-direction: column;
-                    & > svg { margin: 5% auto; }
-                }
-                & > div { margin: 0; margin-right: 0; }
-            }
-
-            & > .copyright {
-                width: 100%;
-                margin: 0;
-                margin-bottom: 20%;
+@media screen and (max-width: 200px) {
+    .footer {
+        & > .services {
+            & > .contacts { 
                 & > div {
-                    margin: 0;
-                    margin-right: 0;
-                    padding-left: 5%;
-                }
+                    padding: 1% 0;
+                    padding-left: 1rem;
+                    & > span { font-size: 10px; margin-bottom: 0.3rem;}
 
-                & > .live-time > .fa-clock { 
-                    margin: 20% auto; 
-                    text-align: center; 
-                    display: block;
-                    font-size: 38px;
-                }
-                & > .live-time > .time { 
-                    font-size: 16px;
-                    margin-bottom: 20%; 
-                }
+                } 
+            }
+
+            & .links > div > ul > li > a { font-size: 10px; }
+        }
+    }
+}
+
+@media screen and (max-width: 150px) {
+    .footer {
+        & > .services {
+            & > .contacts { 
+                & > div {
+                    & > span { font-size: 8px; }
+                } 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 130px) {
+    .footer {
+        & > .services {
+            overflow: hidden;
+            & > .contacts { 
+                & > h5 { font-size: 12px; margin: 0; width: 100%; }
+                overflow: hidden;
+                & > div {
+                    padding: 0;
+                    overflow: hidden;
+                    width:  100%;
+                    & > span { width: 100%; overflow: hidden;}
+
+                } 
             }
         }
     }

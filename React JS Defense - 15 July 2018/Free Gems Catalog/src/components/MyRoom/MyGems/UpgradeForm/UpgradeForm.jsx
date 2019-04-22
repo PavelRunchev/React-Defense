@@ -19,6 +19,7 @@ const UpgradeForm = (props) => {
                             <button type="submit" className="gems-upgrade-btn">Upgrade</button>
                         </div>
                     </form> 
+                    {props.myJewels.length === 0 ? '' : <h4>You is created {props.myJewels.length} Jewels!</h4>}
                 </section>
             }
         </Fragment>
