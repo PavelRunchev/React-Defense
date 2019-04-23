@@ -179,7 +179,7 @@ class SignUp extends Component {
 
     render () {
         return (
-            <div className="container-fluid" id="signUp">
+            <div className="container-fluid signUp">
                 <section>
                     <div className="logoForm">
                         <span>

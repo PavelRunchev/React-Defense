@@ -1,7 +1,7 @@
 @import '../../../sass//mixins.scss';
 @import '../../../sass/animations.scss';
 
-#support {
+.support {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
 
     & > .inner-support {
         @include inner-template;
-        width: 50%;
+        width: 50rem;
         height: 500px;
         display: flex;
         justify-content: center;
@@ -41,5 +41,63 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .support {
+        & > .inner-support { width: 40rem; height: auto; padding-top: 5%; }
+        & > .inner-support > .box > h3 { font-size: 24px; }
+        & > .inner-support > .box > div > .row > span { font-size: 20px; }
+        & > .inner-support > .box > div > .row > svg { font-size: 20px;  }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .support {
+        & > .inner-support { width: 85%; }
+        // & > .inner-support > .box > h3 { font-size: 22px; }
+        // & > .inner-support > .box > div > .row > span { font-size: 16px; }
+        // & > .inner-support > .box > div > .row > svg { font-size: 16px;  }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .support {
+        & > .inner-support > .box > h3 { font-size: 22px; }
+        & > .inner-support > .box > div > .row > span { font-size: 16px; }
+        & > .inner-support > .box > div > .row > svg { font-size: 16px;  }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .support {
+        & > .inner-support > .box > h3 { font-size: 20px; }
+        & > .inner-support > .box > div > .row > span { font-size: 14px; }
+        & > .inner-support > .box > div > .row > svg { font-size: 14px;  }
+        & > .inner-support > .box > div > .row { 
+            overflow: hidden;
+            padding-left: 15%; 
+        }
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .support {
+        & > .inner-support { width: 98%; }
+        & > .inner-support > .box > h3 { font-size: 18px; }
+        & > .inner-support > .box > div > .row > span { font-size: 12px; }
+        & > .inner-support > .box > div > .row > svg { font-size: 12px;  }
+    }
+}
+
+@media screen and (max-width: 210px) {
+    .support {
+        & > h2 { font-size: 22px; }
+        & > .inner-support { width: 100%; padding: 0 10%; }
+        & > .inner-support > .box { height: auto; }
+        & > .inner-support > .box > h3 { font-size: 16px; }
+        & > .inner-support > .box > div > .row > span { font-size: 10px; }
+        & > .inner-support > .box > div > .row > svg { font-size: 10px;  }
     }
 }

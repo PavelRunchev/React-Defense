@@ -6,7 +6,7 @@ export default class Support extends React.Component {
     
     render () {
         return(
-            <div className="container-fluid" id="support">
+            <div className="container-fluid support">
                 <h2>Support</h2>
                 <div className="inner-support">
                     <div className="box">
