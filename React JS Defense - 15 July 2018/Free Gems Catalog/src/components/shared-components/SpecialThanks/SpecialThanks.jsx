@@ -4,7 +4,7 @@ import './SpecialThanks.scss';
 export default class SpecialThanks extends React.Component {
     render () {
         return(
-            <div className="container-fluid" id="special-thanks">
+            <div className="container-fluid special-thanks">
                 <h2>Special Thanks</h2>
                 <div className="inner-special-thanks">
                     <div className="box">

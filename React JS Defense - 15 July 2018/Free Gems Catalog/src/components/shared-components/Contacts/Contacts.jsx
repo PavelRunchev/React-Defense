@@ -4,8 +4,7 @@ import './Contacts.scss';
 export default class Contacts extends React.Component {
     render () {
         return(
-            <div className="container-fluid" id="contacts">
-                <h2>Contacts</h2>
+            <div className="container-fluid contacts-section">
                 <div className="inner-contacts">
                     <p id="owner"><span>Owner: </span> Pavel Runchev</p>
                     <p id="owner-name"><span>Username: </span> RAIDERS</p>

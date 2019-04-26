@@ -17,7 +17,7 @@ class UsersTable extends Component {
 
         return (
             <Fragment>
-                <table className="table table-hover table-responsive-l">
+                <table className="table table-hover table-responsive-s">
                     <thead className="table-dark">
                         <tr>
                             <th>N</th>

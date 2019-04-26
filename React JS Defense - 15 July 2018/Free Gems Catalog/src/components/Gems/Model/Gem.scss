@@ -10,6 +10,7 @@
     -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+    margin: 2%;
     &:hover { 
         transform: scale(1.05); 
         -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.95);
@@ -47,10 +48,43 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    #gem { margin: 3% auto; }
+@media screen and (max-width: 890px) {
+    .gem { margin: 5% auto; }
 }
 
-@media screen and (max-width: 400px) {
-    #gem { width: 98%; }
+@media screen and (max-width: 413px) {
+    .gem { 
+        width: 98%; 
+
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .gem {
+        width: 100%;
+        & > .gem-view { 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            & > a {
+            width: 5.5rem;
+            margin-left: 25%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .gem {
+        & > .gem-view { & > a { margin-left: 15%; } }
+    }
+}
+
+@media screen and (max-width: 170px) {
+    .gem {
+        & > .gem-view { & > a { 
+            margin-left: 0; 
+            width: 100%;
+        } }
+    }
 }

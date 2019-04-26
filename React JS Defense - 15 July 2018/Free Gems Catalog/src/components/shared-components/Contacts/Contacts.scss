@@ -1,14 +1,13 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#contacts {
+.contacts-section {
     background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5)),
     url('../../../image/jewelry-contact-background.jpg');
     background-size: 100% 110%;
     overflow: hidden;
     padding: 4%;
     height: 83vh;
-    & > h2 { font-weight: bold; color: #fff; text-shadow: 1px 1px rgb(0,0,0); }
 
     & > .inner-contacts {
         
@@ -32,6 +31,55 @@
             opacity: 0;
             & > img { @include contact-logo; } 
             animation: developerLogoAnimation 10s 33s linear forwards; 
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contacts-section {
+        & > h2 { font-size: 24px; }
+        & > .inner-contacts {
+            & > #owner,
+            & > #owner-name,
+            & > #owner-email,
+            & > #owner-phone,
+            & > #admin,
+            & > #admin-name,
+            & > #admin-email,
+            & > #admin-phone,
+            & > #development-softuni,
+            & > #softuni-logo,
+            & > #developer,
+            & > #developer-logo {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .contacts-section {
+        & > h2 { font-size: 24px; }
+        & > .inner-contacts {
+            & > #owner,
+            & > #owner-name,
+            & > #owner-email,
+            & > #owner-phone,
+            & > #admin,
+            & > #admin-name,
+            & > #admin-email,
+            & > #admin-phone,
+            & > #development-softuni,
+            & > #softuni-logo,
+            & > #developer,
+            & > #developer-logo {
+                font-size: 12px;
+            }
+
+            & > #softuni-logo > img,
+            & > #developer-logo > img {
+                width: 40%;
+            }
         }
     }
 }

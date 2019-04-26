@@ -1,10 +1,27 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#JewelsSection {
+.JewelsSection {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 2%;
+    overflow: hidden;
     & > h2 { @include h2; }
+}
+
+@media screen and (max-width: 900px) {
+    .JewelsSection > h2 { font-size: 26px; }
+}
+
+@media screen and (max-width: 600px) {
+    .JewelsSection > h2 { font-size: 24px; }
+}
+
+@media screen and (max-width: 400px) {
+    .JewelsSection > h2 { font-size: 22px; }
+}
+
+@media screen and (max-width: 200px) {
+    .JewelsSection > h2 { font-size: 20px; }
 }

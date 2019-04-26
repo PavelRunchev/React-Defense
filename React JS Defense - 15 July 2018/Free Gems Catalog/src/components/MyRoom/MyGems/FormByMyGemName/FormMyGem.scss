@@ -9,7 +9,7 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            & > select { width: 10rem; outline: none; margin-right: 2rem; }
+            & > .gem-name { width: 10rem; outline: none; margin-right: 2rem; }
             & > .gems {
                 cursor: pointer; 
                 outline: none;
@@ -39,7 +39,7 @@
         width: 100%;
         & > form > .form-group {
             flex-direction: column;
-            & > select { margin: 2% auto; width: 80%; }
+            & > .gem-name { margin: 2% auto; width: 60%; }
             & > button { margin: 2% auto; padding: 0.3rem 1rem; }
         }
     }
@@ -50,7 +50,7 @@
         & > form > p { font-size: 16px; }
         & > form > .form-group {
             flex-direction: column;
-            & > select { margin: 2% auto; width: 100%; }
+            & > .gem-name { margin: 2% auto; width: 100%; }
             & > .gems { 
                 width: 100%;
                 margin: 5% auto; 

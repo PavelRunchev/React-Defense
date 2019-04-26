@@ -64,6 +64,7 @@
 
 @media screen and (max-width: 550px) {
     .support {
+        & > h2 { font-size: 24px; }
         & > .inner-support > .box > h3 { font-size: 22px; }
         & > .inner-support > .box > div > .row > span { font-size: 16px; }
         & > .inner-support > .box > div > .row > svg { font-size: 16px;  }
@@ -72,6 +73,7 @@
 
 @media screen and (max-width: 350px) {
     .support {
+        & > h2 { font-size: 22px; }
         & > .inner-support > .box > h3 { font-size: 20px; }
         & > .inner-support > .box > div > .row > span { font-size: 14px; }
         & > .inner-support > .box > div > .row > svg { font-size: 14px;  }
@@ -84,6 +86,7 @@
 
 @media screen and (max-width: 280px) {
     .support {
+        & > h2 { font-size: 20px; }
         & > .inner-support { width: 98%; }
         & > .inner-support > .box > h3 { font-size: 18px; }
         & > .inner-support > .box > div > .row > span { font-size: 12px; }
@@ -93,8 +96,14 @@
 
 @media screen and (max-width: 210px) {
     .support {
-        & > h2 { font-size: 22px; }
-        & > .inner-support { width: 100%; padding: 0 10%; }
+        overflow: hidden;
+        & > h2 { font-size: 18px; }
+        & > .inner-support { 
+            width: 100%; 
+            padding: 0 10%; 
+            overflow: hidden;
+            & > .box { width: 100%; }
+        }
         & > .inner-support > .box { height: auto; }
         & > .inner-support > .box > h3 { font-size: 16px; }
         & > .inner-support > .box > div > .row > span { font-size: 10px; }

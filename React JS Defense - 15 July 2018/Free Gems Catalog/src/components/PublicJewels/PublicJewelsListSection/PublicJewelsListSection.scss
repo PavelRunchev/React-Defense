@@ -1,10 +1,26 @@
 @import '../../../sass//mixins';
 @import '../../../sass/animations';
 
-#publicJewels {
+.publicJewels {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2%;
     & > h2 { @include h2; }
+}
+
+@media screen and (max-width: 600px) {
+    .publicJewels > h2 { font-size: 24px; }
+}
+
+@media screen and (max-width: 300px) {
+    .publicJewels > h2 { font-size: 22px; }
+}
+
+@media screen and (max-width: 200px) {
+    .publicJewels > h2 { font-size: 20px; }
+}
+
+@media screen and (max-width: 165px) {
+    .publicJewels > h2 { font-size: 18px; }
 }

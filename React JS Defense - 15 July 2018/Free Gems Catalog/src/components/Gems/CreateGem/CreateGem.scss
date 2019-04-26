@@ -13,6 +13,7 @@
     & > .inner-create {
         @include form-template;
         overflow: hidden;
+        width: 60rem;
 
         & > .image-view {
             overflow: hidden;
@@ -27,6 +28,7 @@
 
         & > .create-form {
             @include create-form;
+            padding: 2% 0;
 
             & > h3 { @include h4; margin-bottom: 7%; }
 
@@ -37,15 +39,116 @@
                     margin: 5% 0;
                     justify-content: space-around;
                     & > span {
-                        width: 50%;
+                        width: 40%;
                         text-align: right;
                         & > label { @include label; }
-                        & > input { @include input-field; }
+                        & > input { @include input-field; width: 100%; }
                     }
 
-                    & > .create-submit-gem { @include details-button; }
+                    & > .create-submit-gem { 
+                        @include details-button; 
+                        margin-top: 5%;
+                        margin-right: 0; 
+                    }
                 }
             }
         }
     }
+}
+
+@media screen and (max-width: 1100px) {
+    .create-gem {
+        padding: 4% 0;
+        & > .inner-create { width: 90%;  }
+    } 
+}
+
+@media screen and (max-width: 850px) {
+    .create-gem {
+        & > h2 { font-size: 28px; }
+        & > h4 { font-size: 20px; }
+        & > .inner-create { 
+            height: auto;
+            & > .image-view > h3 { font-size: 22px; margin-top: 90%; } 
+            & > .create-form {
+                & > h3 { font-size: 24px; }
+                & > form .row {
+                    flex-direction: column;
+                    & > span { width: 80%; margin: 0 auto; }
+                    & > span > label { text-align: center; }
+                    & > .create-submit-gem { width: 8rem; margin: 0 auto; }
+                }
+            } 
+        }
+    } 
+}
+
+@media screen and (max-width: 700px) {
+    .create-gem {
+        & > h2 { font-size: 26px; }
+        & > h4 { font-size: 18px; }
+        & > .inner-create { 
+            height: auto;
+            flex-direction: column;
+            & > .image-view { width: 100%; }
+            & > .image-view > h3 { font-size: 20px; margin: 30% 0; } 
+            & > .create-form {
+                width: 100%;
+                border-left: none;
+                border-top: 2px solid rgb(21,140,186);
+                padding: 3%;
+                & > h3 { font-size: 22px; }
+                & > form .row {
+                    flex-direction: column;
+                    & > span { width: 20rem; margin: 0 auto; }
+                    & > span > label { text-align: center; }
+                    & > span > input { margin: 0 auto; }
+                    & > .create-submit-gem { width: 8rem; margin: 0 auto; }
+                }
+            } 
+        }
+    } 
+}
+
+@media screen and (max-width: 380px) {
+    .create-gem {
+        & > h2 { font-size: 24px; }
+        & > h4 { font-size: 16px; }
+        & > .inner-create { 
+            height: auto;
+            flex-direction: column;
+            & > .image-view { width: 100%; }
+            & > .create-form {
+                & > h3 { font-size: 20px; }
+                & > form .row {
+                    flex-direction: column;
+                    & > span { width: 95%; margin: 0 auto; }
+                   
+                    & > .create-submit-gem { width: 8rem; margin: 0 auto; }
+                }
+            } 
+        }
+    } 
+}
+
+@media screen and (max-width: 250px) {
+    .create-gem {
+        & > h2 { font-size: 22px; }
+        & > h4 { font-size: 14px; }
+        & > .inner-create { 
+            height: auto;
+            flex-direction: column;
+            & > .image-view { width: 100%; }
+            & > .image-view > h3 { font-size: 16px; }
+            & > .create-form {
+                & > h3 { font-size: 18px; }
+                & > form .row {
+                    flex-direction: column;
+                    & > span { width: 95%; margin: 0 auto; }
+                    & > span > label { font-size: 12px; }
+                    & > .create-submit-gem { width: 80%; margin: 5% auto; font-size: 12px; }
+                }
+            } 
+        }
+    } 
 }

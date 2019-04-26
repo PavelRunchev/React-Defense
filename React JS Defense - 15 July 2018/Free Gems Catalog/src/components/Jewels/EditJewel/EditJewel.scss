@@ -63,7 +63,7 @@
 
 @media screen and (max-width: 750px) {
     .editJewel-form {
-        & > h2 { font-size: 30px; }
+        & > h2 { font-size: 28px; }
         & > h4 { font-size: 20px; }
         & > .inner-editJewel {
             flex-direction: column;
@@ -87,12 +87,28 @@
 
 @media screen and (max-width: 450px) {
     .editJewel-form {
-        & > h2 { font-size: 30px; }
-        & > h4 { font-size: 20px; }
+        & > h2 { font-size: 24px; }
+        & > h4 { font-size: 18px; }
         & > .inner-editJewel {
             & > .edit-form {
                 & > button { font-size: 14px; padding-top: 0.5rem; }
-                & > h3 { font-size: 24px; }
+                & > h3 { font-size: 20px; }
+                & > form > .row { width: 85%; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .editJewel-form {
+        overflow: hidden;
+        & > h2 { font-size: 20px; }
+        & > h4 { font-size: 16px; }
+        & > .inner-editJewel {
+            overflow: hidden;
+            & > .edit-form {
+                & > button { font-size: 14px; padding-top: 0.5rem; }
+                & > h3 { font-size: 18px; }
                 & > form > .row { width: 85%; }
             }
         }

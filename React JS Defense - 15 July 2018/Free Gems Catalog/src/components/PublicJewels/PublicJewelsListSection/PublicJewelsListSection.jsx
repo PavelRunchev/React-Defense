@@ -6,7 +6,7 @@ import PublicJewelsList from './PublicJewelsList';
 class PublicJewelsListSection extends Component {
     render () {
         return (
-            <div className="container-fluid" id="publicJewels">
+            <div className="container-fluid publicJewels">
                 <h2>All Public Jewels</h2>
                 <PublicJewelsList url={this.props.match.url}/>
             </div>

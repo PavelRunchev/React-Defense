@@ -1,5 +1,5 @@
 .myGem {
-    width: 15%;
+    width: 15rem;
     margin: 2%;
     overflow: hidden;
     border-radius: 0.4rem;
@@ -29,5 +29,19 @@
         & > img {
             width: 100%;
         }
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .myGem > a > .gem-name,
+    .myGem > a > .gem-set { font-size: 14px;
+
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .myGem > a > .gem-name,
+    .myGem > a > .gem-set { font-size: 12px;
+
     }
 }

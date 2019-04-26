@@ -83,7 +83,7 @@
                 & > form > .row { 
                     flex-direction: column; 
                     & > span {
-                        width: 60%;
+                        width: 80%;
                         margin: 2% auto;
                     }
 
@@ -100,7 +100,7 @@
 
 @media screen and (max-width: 750px) {
     .edit-publicJewel {
-        & > h2 { font-size: 30px; }
+        & > h2 { font-size: 28px; }
         & > h4 { font-size: 20px; }
         & > .inner-edit-publicJewel { 
             height: 100%; 
@@ -116,18 +116,24 @@
                 height: auto;
                 border-left: unset;
                 border-top: 2px solid goldenrod;
+
+                & > h3 { font-size: 24px; }
+                & > form > .row { width: 24rem; }
             }
         }
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     .edit-publicJewel {
+        & > h2 { font-size: 24px; }
+        & > h4 { font-size: 16px; }
         & > .inner-edit-publicJewel { 
             & > .edit-publicJewel-form {
+                & > h3 { font-size: 18px; }
                 & > form > .row { 
-                   width: 100%; 
-                   & > span { width: 70%; }
+                   width: 90%; 
+                   & > span { width: 90%; }
                 }
             }
         }
@@ -135,5 +141,16 @@
 }
 
 @media screen and (max-width: 300px) {
+    .edit-publicJewel {
+        & > h2 { font-size: 22px; }
+        & > h4 { font-size: 14px; }
+    }
+
     .edit-publicJewel > .inner-edit-publicJewel > .edit-publicJewel-form > form > .row > span { width: 90%; }
+}
+
+@media screen and (max-width: 200px) {
+    .edit-publicJewel {
+        & > h2 { font-size: 20px; }
+    }
 }

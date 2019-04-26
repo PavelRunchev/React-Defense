@@ -23,6 +23,7 @@
             border-top-left-radius: 0.3rem;
             color: #158CBA;
             margin-right: 0.3rem;
+            border-color: #fff;
             &::-webkit-input-placeholder { color: #fff; }
 
             &:focus {
@@ -72,10 +73,23 @@
     .searchGems { width: 100%; }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 413px) {
+    .searchGems > form { 
+        & > input { 
+            margin: 5% 0; 
+            border-color: #fff; 
+            border-radius: 0.3rem;
+        }
+
+        & > button { border-radius: 0.3rem; }
+    }
+}
+
+@media screen and (max-width: 290px) {
     .searchGems {
+        overflow: hidden;
         & > form > input {
-            width: 100%;
+            width: 95%;
         }
     }
 }

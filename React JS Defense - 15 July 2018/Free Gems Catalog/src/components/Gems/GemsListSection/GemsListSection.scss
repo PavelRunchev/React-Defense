@@ -9,3 +9,11 @@
     & > h2 { @include h2; }
 }
 
+@media screen and (max-width: 240px) {
+    .gemsSection { h2 { font-size: 20px; } }
+}
+
+@media screen and (max-width: 100px) {
+    .gemsSection { h2 { font-size: 14px; } }
+}
+

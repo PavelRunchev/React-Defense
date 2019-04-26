@@ -47,7 +47,9 @@
             margin: 0 auto;
             & > tr > td,
             & > tr > th,
-            & > tr { max-width: 100%; }
+            & > tr { 
+                max-width: 100%;
+            }
         }
     }
 }
@@ -61,6 +63,24 @@
             & > tr {
                 display: flex;
                 flex-direction: column;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .table {
+        & > thead,
+        & > tbody,
+        & > tfoot { 
+            width: 100%;
+            overflow: hidden;
+            & > tr,
+            & > tr > td {
+               width: 100%;
+               overflow: hidden;
+               padding-left: 0;
+               padding-right: 0;
             }
         } 
     }

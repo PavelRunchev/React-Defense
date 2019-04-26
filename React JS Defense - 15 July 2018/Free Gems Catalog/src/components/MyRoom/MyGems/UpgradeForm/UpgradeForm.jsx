@@ -11,7 +11,7 @@ const UpgradeForm = (props) => {
                     <h4 className="text-center font-weight-bold">For upgrade you needed 3 gems from one type (set)!</h4>
                     <form onSubmit={props.handler[0]}>                     
                         <div className="form-group">
-                            <select name="upgradeSet" onChange={props.handler[1]} className="form-control" id="upgradeSet">
+                            <select name="upgradeSet" onChange={props.handler[1]} className="form-control upgradeSet">
                                 <option>Ring</option>
                                 <option>Pendant</option>
                                 <option>Bracelet</option>

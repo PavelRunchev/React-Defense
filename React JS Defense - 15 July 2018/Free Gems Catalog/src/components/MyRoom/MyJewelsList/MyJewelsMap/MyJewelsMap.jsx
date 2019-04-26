@@ -3,11 +3,10 @@ import MyJewel from '../../Model/MyJewel';
 
 const MyJewelsMap = (props) => {
     let data = [];
-    console.log(props);
+
     if(props.myJewels.length > 0) {
         data = props.myJewels.sort((a,b) => b._kmd.lmt.localeCompare(a._kmd.lmt));
     }
-    console.log(data);
     
     return (
         <div className="myJewels">

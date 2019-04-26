@@ -11,6 +11,7 @@
     & > h2 { @include h2; }
 
     & > .container-gems {
+        width: 100%;
         & > .gems-ring,
         & > .gems-pendant,
         & > .gems-bracelet {
@@ -25,6 +26,18 @@
                 display: flex;
                 justify-content: center;
                 padding: 2% 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .myGemsList {
+        & > .container-gems {
+            & > .gems-ring > .gems-ring-list,
+            & > .gems-pendant > .gems-pendant-list,
+            & > .gems-bracelet > .gems-bracelet-list {
+                flex-wrap: wrap;
             }
         }
     }

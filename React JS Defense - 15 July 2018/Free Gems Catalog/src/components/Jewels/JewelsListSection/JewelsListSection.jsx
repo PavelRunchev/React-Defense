@@ -7,7 +7,7 @@ import Loading from '../../Loading/Loading';
 class AllJewels extends Component {
     render () {
         return (
-            <div className="container-fluid" id="JewelsSection">
+            <div className="container-fluid JewelsSection">
                 <h2>Jewels Section</h2>
                 {this.props.data !== undefined ? 
                     <Loading/> : 

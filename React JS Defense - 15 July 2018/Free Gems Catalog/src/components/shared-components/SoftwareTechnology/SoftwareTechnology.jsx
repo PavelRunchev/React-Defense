@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default class SoftwareTechnology extends React.Component {
     render () {
         return(
-            <div className="container-fluid" id="software-technology">
+            <div className="container-fluid software-technology">
                 <h2 className="h2 text-center">Software Technology</h2>
                 <div className="inner-software-technology">
                     <div className="box ">

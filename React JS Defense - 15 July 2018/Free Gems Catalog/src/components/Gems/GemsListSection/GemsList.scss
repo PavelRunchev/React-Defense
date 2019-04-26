@@ -74,16 +74,20 @@
 @media screen and (max-width: 350px) {
     .inner-gems { 
         & > .page-numbers { 
-            width: 10%; 
+            width: 3rem; 
             margin: 2% auto;
             & > ul { 
                 flex-direction: column; 
                 & > li {
-                    margin: 10% auto;
+                    margin: 20% auto;
                     & > a { padding: 0.7rem; }
                 }
             }
         } 
     }
+}
+
+@media screen and (max-width: 100px) {
+    .inner-gems > .page-numbers { width: 100%; }
 }
 

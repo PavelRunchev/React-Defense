@@ -83,6 +83,8 @@
             & > .edit-form {
                 width: 100%;
                 display: block;
+                border-left: none;
+                border-top: 2px solid goldenrod;
             }
         }
     }
@@ -107,13 +109,17 @@
 
 @media screen and (max-width: 400px) {
     .edit-gem {
+        & > h2 { font-size: 24px; }
         & > .inner-editGem {
+            width: 90%;
             & > .edit-form {
-               & > form {
+                & > h3 { font-size: 20px; }
+                & > form {
                     & > .row {
-                      
+                        width: 80%;
                         & > span { width: 90%; }
-                        & > .edit-submit-gem { width: 70%; }
+                        & > span > label { font-size: 12px; }
+                        & > .edit-submit-gem { width: 110px; }
                     }
                } 
             }
@@ -121,20 +127,22 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 180px) {
     .edit-gem {
-        & > h2 { font-size: 18px; }
+        overflow: hidden;
+        & > h2 { font-size: 16px; }
+        & > h4 { font-size: 12px; }
         & > .inner-editGem {
             & > .edit-form {
-                & > h3 { font-size: 16px; }
+                overflow: hidden;
+                & > h3 { font-size: 14px; }
                 & > form {
                     & > .row {
-                      
+                        width: 98%;
                         & > span { 
-                            width: 99%; 
                             & > label { font-size: 12px; }
                         }
-                        & > .edit-submit-gem { width: 99%; }
+                        & > .edit-submit-gem { width: 90%; padding: 0.3rem 0.5rem; }
                     }
                } 
             }

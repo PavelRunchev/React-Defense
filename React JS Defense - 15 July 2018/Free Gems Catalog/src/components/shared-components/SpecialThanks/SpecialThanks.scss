@@ -1,7 +1,7 @@
 @import '../../../sass/mixins';
 @import '../../../sass/animations';
 
-#special-thanks {
+.special-thanks {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -45,6 +45,51 @@
             @for $i from 1 through 4 {
                 & p:nth-child(#{$i}) { animation-delay: $i * 1.5s; }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .special-thanks {
+        & > h2 { font-size: 24px; }
+        & > .inner-special-thanks { height: auto; padding-top: 10%; }
+        & > .inner-special-thanks > .box {
+            height: auto;
+            & > p,
+            & > p > span { font-size: 20px; }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .special-thanks {
+        & > h2 { font-size: 22px; }
+        & > .inner-special-thanks > .box {
+            & > p,
+            & > p > span { font-size: 16px; }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .special-thanks {
+        & > h2 { font-size: 20px; }
+        & > .inner-special-thanks { width: 90%; }
+        & > .inner-special-thanks > .box {
+            & > p,
+            & > p > span { font-size: 14px; }
+        }
+    }
+}
+
+
+@media screen and (max-width: 230px) {
+    .special-thanks {
+        & > h2 { font-size: 18px; }
+        & > .inner-special-thanks { width: 90%; }
+        & > .inner-special-thanks > .box {
+            & > p,
+            & > p > span { font-size: 10px; }
         }
     }
 }

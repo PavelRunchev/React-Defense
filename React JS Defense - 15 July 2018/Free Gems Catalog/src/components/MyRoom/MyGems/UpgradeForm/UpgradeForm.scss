@@ -13,7 +13,7 @@
         & > .form-group {
             display: flex;
             justify-content: center;
-            & > select { width: 9.5rem; outline: none; margin-right: 5%; }
+            & > .upgradeSet { width: 9.5rem; outline: none; margin-right: 5%; }
             & > .gems-upgrade-btn { @include edit-button; padding: 0.3rem 1rem; }
         }
     }
@@ -32,7 +32,7 @@
         & > h4 { font-size: 16px; }
         & > form > .form-group {
             flex-direction: column;
-            & > select { margin: 2% auto; width: 80%; }
+            & > .upgradeSet { margin: 2% auto; width: 60%; }
             & > button { margin: 2% auto; padding: 0.3rem 1rem; }
          }
     }
@@ -44,7 +44,7 @@
         & > h4 { font-size: 16px; }
         & > form > .form-group {
             flex-direction: column;
-            & > select { margin: 5% auto; width: 100%; }
+            & > .upgradeSet { margin: 5% auto; width: 100%; }
             & > .gems-upgrade-btn { 
                 margin: 5% auto; 
                 padding: 5% 0; 

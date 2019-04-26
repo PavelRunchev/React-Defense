@@ -72,9 +72,25 @@
     }
 }
 
-@media screen and (max-width: 225px) {
-    #accordion & > .card > .card-body > form > .save-change { 
-        width: 80%;
+@media screen and (max-width: 300px) {
+    #accordion > .card > .card-body > h4 { font-size: 18px; }
+    #accordion > .card > .card-body > form {
+        & > .row > label { font-size: 14px; }
+        & > .row > input { width: 100%; }
+    }
+    #accordion > .card > .card-body > form > .save-change { 
+        width: 6rem;
+        font-size: 12px;
+        padding: 5% 2%;
+    }
+}
+
+@media screen and (max-width: 200px) {
+    #accordion > .card > .card-body > form {
+        & > .row > label { font-size: 12px; }
+    }
+    #accordion > .card > .card-body > form > .save-change { 
+        width: 100%;
         font-size: 12px;
         padding: 5% 2%;
     }

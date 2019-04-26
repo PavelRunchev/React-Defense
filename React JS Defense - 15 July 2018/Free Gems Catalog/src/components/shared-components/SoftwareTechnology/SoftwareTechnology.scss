@@ -2,12 +2,12 @@
 @import '../../../sass//mixins.scss';
 @import '../../../sass/animations.scss';
 
-#software-technology {
+.software-technology {
     background-image: url('../../../image/gemstone-crystal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2%;
-    & > h2 { font-weight: bold; color: #158CBA; text-shadow: 1px 1px rgb(0,0,0); }
+    & > h2 { @include h2; }
 
     & > .inner-software-technology {
         @include inner-template;
@@ -54,6 +54,44 @@
             @for $i from 2 through 4 {
                 & div:nth-child(#{$i}) { animation-delay: $i * 1.5s; }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .software-technology {
+        & > h2 { font-size: 26px; }
+        & > .inner-software-technology > .box { padding-left: 25%; }
+        & > .inner-software-technology > .box > div {
+            display: flex;
+            justify-content: left;
+            & > span, 
+            & > svg { font-size: 20px; }
+        }
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .software-technology {
+        & > h2 { font-size: 24px; }
+        & > .inner-software-technology > .box { padding-left: 15%; }
+        & > .inner-software-technology > .box > div {
+            display: flex;
+            justify-content: left;
+            & > span, 
+            & > svg { font-size: 18px; }
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .software-technology {
+        overflow: hidden;
+        & > h2 { font-size: 22px; }
+        & > .inner-software-technology > .box { overflow: hidden; }
+        & > .inner-software-technology > .box > div {
+            overflow: hidden;
+            & > svg { display: none; }
         }
     }
 }

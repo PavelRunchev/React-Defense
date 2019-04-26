@@ -125,28 +125,29 @@ class GemDetails extends Component {
 
                 {this.state.gem.imageUrl === undefined ? <Loading /> : 
                     <div className="inner-details">
-                       
-                        <div className="image-name">
-                            <h4>Name: {gem.name}</h4>
-                            <img  src={gem.imageUrl} alt="gallery"/>
-                        </div>
-                        <div className="info">
-                            {auth.isAdmin() && <button onClick={this.onDeleteGem}>
-                                <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
-                            </button>}
-                            <h4>Info for Gem</h4>
-                            <div className="inner-text">
-                                <p>Color: {gem.color}</p>
-                                <p>Weight: {gem.weight} ct.</p>
-                                <p>Origin: {gem.origin}</p>
-                                <p>Set: {gem.type}</p>
+                        {auth.isAdmin() && <button onClick={this.onDeleteGem}>
+                            <FontAwesomeIcon icon="trash-alt" size="2x" className="trash"></FontAwesomeIcon>
+                        </button>}
+                        <div className="gem-box">
+                            <div className="image-name">
+                                <h4>Name: {gem.name}</h4>
+                                <img  src={gem.imageUrl} alt="gallery"/>
                             </div>
+                            <div className="info">
+                                <h4>Info for Gem</h4>
+                                <div className="inner-text">
+                                    <p>Color: {gem.color}</p>
+                                    <p>Weight: {gem.weight} ct.</p>
+                                    <p>Origin: {gem.origin}</p>
+                                    <p>Set: {gem.type}</p>
+                                </div>
                              
-                            <span>
-                                <FontAwesomeIcon icon="hand-point-right" className="right-hand"/>
-                                <button className="take-it" onClick={this.onTakeGem}>Take It</button>
-                            </span>  
-                            <div className="info-take font-weight-bold">Clicked button and take current gem in your room!</div>                         
+                                <span>
+                                    <FontAwesomeIcon icon="hand-point-right" className="right-hand"/>
+                                    <button className="take-it" onClick={this.onTakeGem}>Take It</button>
+                                </span>  
+                                <div className="info-take font-weight-bold">Clicked button and take current gem in your room!</div>                         
+                            </div>
                         </div>
                     </div>
                 }

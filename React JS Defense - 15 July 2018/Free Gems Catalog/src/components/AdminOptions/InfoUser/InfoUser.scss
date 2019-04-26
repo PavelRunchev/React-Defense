@@ -136,6 +136,7 @@
 
 @media screen and (max-width: 850px) {
     .info-user {
+        & > h2 { font-size: 26px; }
         & > .inner-info-user {
             & > .info {
                 padding: 3% 0;
@@ -151,6 +152,7 @@
 
 @media screen and (max-width: 540px) {
     .info-user {
+        & > h2 { font-size: 24px; }
         & > .inner-info-user {
             & > #accordion {
                 width: 97%;
@@ -164,7 +166,9 @@
 
 @media screen and (max-width: 430px) {
     .info-user {
+        & > h2 { font-size: 22px; }
         & > .inner-info-user {
+            & > .info > .main-info > p { font-size: 14px; }
             & > #accordion {
                 & > .card > .card-body {
                     & > form > .row {
@@ -173,6 +177,36 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .info-user {
+        overflow: hidden;
+        & > h2 { font-size: 20px; }
+        & > .inner-info-user {
+            overflow: hidden;
+            & > .info > .main-info > p { font-size: 12px; }
+            & > #accordion {
+                overflow: hidden;
+                & > .card > .card-body {
+                    & > form > .row {
+                        flex-direction: column;
+                        & > input { width: 100%; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 130px) {
+    .info-user {
+        overflow: hidden;
+        & > h2 { font-size: 18px; }
+        & > .inner-info-user {
+            & > .info > .main-info > p { font-size: 10px; }
         }
     }
 }

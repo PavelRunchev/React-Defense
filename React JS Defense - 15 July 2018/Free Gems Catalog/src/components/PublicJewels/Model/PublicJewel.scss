@@ -3,10 +3,9 @@
 
 .publicJewel {
     @include model;
-    width: 20rem;
+    width: 17rem;
     margin: 3%;
    
-
     & > .jewel-rating,
     & > .jewel-name,
     & > .jewel-create-time { 
@@ -45,5 +44,14 @@
                 border: 1px solid rgb(21,140,186); 
             }       
         }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .publicJewel { 
+        width: 100%; 
+        & > .jewel-rating,
+        & > .jewel-name,
+        & > .jewel-create-time { font-size: 14px; }
     }
 }

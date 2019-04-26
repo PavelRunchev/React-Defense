@@ -44,3 +44,87 @@
         }
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .createJewel {
+        & > .inner-createJewel { width: 100%; }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .createJewel {
+        padding: 5% 3%;
+        & > h2 { font-size: 26px; }
+        & > h4 { font-size: 20px; }
+        & > .inner-createJewel { 
+            flex-direction: column;
+            height: auto;
+            & > .image-view { 
+                width: 100%; 
+                & > h3 { margin: 25% 0; font-size: 24px; }
+            }
+            & > .create-form { 
+                width: 100%;
+                padding: 4% 0;
+                border-left: none;
+                border-top: 2px solid rgb(21,140,186);
+
+                & > h3 { font-size: 24px; }
+                & > form > .row {
+                    & > input { width: 100%; }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .createJewel {
+        & > h2 { font-size: 24px; }
+        & > h4 { font-size: 18px; }
+        & > .inner-createJewel { 
+            & > .image-view { 
+                & > h3 { font-size: 20px; }
+            }
+            & > .create-form { 
+                & > h3 { font-size: 20px; }
+                & > form > .row { width: 85%; }
+                & > form .create-jewel { width: 80%; margin-right: 0; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .createJewel {
+        & > h2 { font-size: 22px; }
+        & > h4 { font-size: 16px; }
+        & > .inner-createJewel { 
+            & > .image-view { 
+                & > h3 { font-size: 18px; }
+            }
+            & > .create-form { 
+                & > h3 { font-size: 18px; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .createJewel {
+        overflow: hidden;
+        & > h2 { font-size: 20px; }
+        & > h4 { font-size: 14px; }
+        & > .inner-createJewel { 
+            overflow: hidden;
+            & > .image-view { 
+                overflow: hidden;
+                & > h3 { font-size: 16px; }
+            }
+            & > .create-form { 
+                overflow: hidden;
+                & > h3 { font-size: 16px; }
+            }
+        }
+    }
+}

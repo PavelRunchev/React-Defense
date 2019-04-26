@@ -23,3 +23,16 @@
         @include pagination;
     }
 }
+
+@media screen and (max-width: 1420px) {
+    .inner-publicJewels > .publicJewels { flex-wrap: wrap; }
+}
+
+@media screen and (max-width: 340px) {
+    .inner-publicJewels > #page-numbers {
+        & > ul { 
+            flex-direction: column; 
+            & > li { margin: 7% auto; }
+        }
+    }
+}

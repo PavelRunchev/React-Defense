@@ -3,6 +3,8 @@
 
 #jewel {
     @include model;
+    width: 17rem;
+    margin: 3%;
 
     & > .jewel-gems,
     & > .jewel-name,

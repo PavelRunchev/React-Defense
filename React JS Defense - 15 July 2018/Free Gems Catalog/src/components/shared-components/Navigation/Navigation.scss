@@ -130,6 +130,18 @@ nav {
     }
 }
 
+@media screen and (max-width: 400px) {
+    nav {
+        & #navbarColor01 {
+            & > .seen-only-by-admin,
+            & > .seen-only-by-moderator {
+                width: 100%;
+                & > h4 { width: 100%; font-size: 16px; }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 300px) {
     nav {
         & .navbar-brand {
